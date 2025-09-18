@@ -15,10 +15,6 @@ const setprefixCommand: ShadowBot.Command = {
     const threadID = event.threadID;
     const senderID = event.senderID;
 
-    if (!context.admins.includes(senderID)) {
-      return api.sendMessage("❌ You don't have permission to change the prefix.", threadID);
-    }
-
     const newPrefix = args[0];
     if (!newPrefix) {
       return api.sendMessage("⚠️ Please provide a new prefix.\nUsage: setprefix <newPrefix>", threadID);
