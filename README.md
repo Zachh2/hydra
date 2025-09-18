@@ -17,6 +17,7 @@ Welcome to **Official version of KagenouBot ver 4.0.0**, an elite Facebook Messe
 
 - **Jimmuel Rivera** - Suggesting commands and contributes to our botfile.
 
+- **Jonell Magallanes** - Biggest thanks for suggesting DiscordBot and Help to setup.
 
 ---
 
@@ -157,10 +158,10 @@ console.log(test)
 
 ---
 
-## What's New in KagenouBot V4.1
+## What's New in KagenouBot
 
 ### MongoDB Integration
-- KagenouBot V4.1 now includes MongoDB support for storing user data, command configurations, and bot settings.
+- KagenouBot now includes MongoDB support for storing user data, command configurations, and bot settings.
 - Easily scale your bot's storage capacity and improve data persistence with MongoDB's robust database solutions.
 
 ### Enhanced Reply Handling
@@ -191,7 +192,7 @@ console.log(test)
 
 **Step 3:** Connect your GitHub or Google gmail
 
-**Stel 4:** Choose the repository, choose KagenouBotV3 and deploy.
+**Stel 4:** Choose the repository, choose KagenouBot and deploy.
 
 > Login required via [Render](https://render.com)
 ---
