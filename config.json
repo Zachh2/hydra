@@ -33,6 +33,7 @@
   "Prefix": [
     "/"
   ],
+  "DiscordMode": false,
   "botName": "KagenouBot",
   "mongoUri": ""
 }
