@@ -3,6 +3,15 @@
  * @Author: Aljur Pogoy
  */
 
+const chalk = require("chalk");
+global.log = {
+  info: (msg) => console.log(chalk.blue("[INFO]"), msg),
+  warn: (msg) => console.log(chalk.yellow("[WARN]"), msg),
+  error: (msg) => console.log(chalk.red("[ERROR]"), msg),
+  success: (msg) => console.log(chalk.green("[SUCCESS]"), msg), 
+  event: (msg) => console.log(chalk.magenta("[EVENT]"), msg)
+};
+
 const { Client, GatewayIntentBits, REST, Routes, Collection } = require("discord.js");
 const fs = require("fs");
 const path = require("path");
@@ -37,16 +46,16 @@ for (const file of commandFiles) {
  */
 async function registerCommands(appId) {
   try {
-    console.log("Registering slash commands...");
+    global.log.info("Registering slash commands...");
     await rest.put(Routes.applicationCommands(appId), { body: commands });
     console.log("Commands registered.");
   } catch (err) {
-    console.error("Command registration failed:", err);
+    global.log.error("Command registration failed:", err);
   }
 }
 
 client.once("ready", async () => {
-  console.log(`✅ Logged in as ${client.user.tag}`);
+  global.log.success(`✅ Logged in as ${client.user.tag}`);
   await registerCommands(client.user.id);
 });
 
