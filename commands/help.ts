@@ -89,7 +89,7 @@ const helpCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: body,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**"
+        footerText: ""
       });
 
     let sentMessageID: string;
