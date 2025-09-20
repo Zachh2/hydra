@@ -21,7 +21,7 @@ const lyricsCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Missing threadID or messageID in event',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -32,7 +32,7 @@ const lyricsCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Please enter a song title.\nExample: lyrics multo',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -43,7 +43,7 @@ const lyricsCommand: ShadowBot.Command = {
       headerStyle: 'bold',
       bodyText: `Searching lyrics for: "${query}"...`,
       bodyStyle: 'sansSerif',
-      footerText: 'Developed by: **Aljur Pogoy**',
+      footerText: '',
     });
     try {
       const messageInfo = await new Promise((resolve, reject) => {
@@ -63,7 +63,7 @@ const lyricsCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Title: ${title}\n\n${lyrics.trim().substring(0, 5000)}\n\nRequested by: ${userName}\nTime: ${timePH}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.editMessage(message, messageInfo.messageID);
     } catch (error) {
@@ -74,7 +74,7 @@ const lyricsCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Failed to fetch lyrics:\n${error.response?.data?.message || error.message || 'Unknown error'}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }

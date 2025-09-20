@@ -137,7 +137,7 @@ const gagstockCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Gagstock tracking stopped for this thread.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         })
         await api.sendMessage(offMessage, threadID, messageID)
       } else {
@@ -147,7 +147,7 @@ const gagstockCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "This thread is not currently tracking Gagstock.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         })
         await api.sendMessage(noSessionMessage, threadID, messageID)
       }
@@ -164,7 +164,7 @@ const gagstockCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: formattedPredict,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         })
         await api.sendMessage(predictMessage, threadID, messageID)
       } catch (error) {
@@ -175,7 +175,7 @@ const gagstockCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `Error fetching prediction: ${error.message}`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         })
         await api.sendMessage(errorMessage, threadID, messageID)
       }
@@ -189,7 +189,7 @@ const gagstockCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Usage:\n• /gagstock on\n• /gagstock on Sunflower | Watering Can\n• /gagstock off\n• /gagstock predict [seed|gear|egg]",
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       })
       await api.sendMessage(usageMessage, threadID, messageID)
       return
@@ -202,7 +202,7 @@ const gagstockCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "This thread is already tracking Gagstock. Use /gagstock off to stop.",
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       })
       await api.sendMessage(activeMessage, threadID, messageID)
       return
@@ -214,7 +214,7 @@ const gagstockCommand: ShadowBot.Command = {
       headerStyle: "bold",
       bodyText: "Gagstock tracking started for this thread via WebSocket!",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur Pogoy**",
+      footerText: "",
     })
     await api.sendMessage(startMessage, threadID, messageID)
 

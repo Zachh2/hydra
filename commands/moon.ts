@@ -102,7 +102,7 @@ const moonCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Missing threadID or messageID in event',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -115,7 +115,7 @@ const moonCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Please enter a valid date in DD/MM/YYYY format',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -131,7 +131,7 @@ const moonCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `An error occurred while fetching the moon image for ${args[0]}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -149,7 +149,7 @@ const moonCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Could not determine moon phase for ${args[0]}. Please try a different date.`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }

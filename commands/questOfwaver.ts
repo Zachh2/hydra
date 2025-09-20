@@ -152,7 +152,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Usage: ${questOfWaverCommand.config.usage}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(helpMessage, threadID, messageID);
       return;
@@ -167,7 +167,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Please provide a name. Usage: /qow register <name>",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(errorMessage, threadID, messageID);
         return;
@@ -179,7 +179,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `You are already registered as ${userData.name}.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(alreadyRegistered, threadID, messageID);
         return;
@@ -201,7 +201,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Welcome, ${name}! Your adventure in Waver begins. Use /qow status to check your progress.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(registerMessage, threadID, messageID);
       return;
@@ -214,7 +214,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "You need to register first. Usage: /qow register <name>",
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(notRegistered, threadID, messageID);
       return;
@@ -230,7 +230,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Name: ${userData.name}\nLevel: ${userData.level}\nEXP: ${userData.exp}\nHealth: ${userData.health}\nMana: ${userData.mana}\nGold: ${userData.gold}\nCurrent Chapter: ${userData.currentChapter} (${storyChapters.find(c => c.id === userData.currentChapter)?.title || "Unknown"})\nActive Quest: ${activeQuestInfo}\nInventory: ${inventoryItems}\nWeapons: ${weapons}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(statusMessage, threadID, messageID);
       return;
@@ -255,7 +255,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: availableQuests,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(questMessage, threadID, messageID);
       return;
@@ -271,7 +271,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Invalid quest UUID. Use /qow quest list to see available quests and their UUIDs.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidQuest, threadID, messageID);
         return;
@@ -284,7 +284,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Cannot accept this quest. Check if it's available, not completed, or if you meet the requirements.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(cannotAccept, threadID, messageID);
         return;
@@ -297,7 +297,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `${quest.storyText}\n\nQuest: ${quest.name}\nObjectives: ${Object.entries(quest.objectives).map(([obj, { goal }]) => `${obj} (0/${goal})`).join(", ")}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(acceptMessage, threadID, messageID);
       return;
@@ -311,7 +311,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "No active quest. Accept one first.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(noActiveQuest, threadID, messageID);
         return;
@@ -324,7 +324,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Invalid objective. Check /qow status for current objectives.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidObjective, threadID, messageID);
         return;
@@ -337,7 +337,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Updated ${objective}: ${userData.activeQuest.objectives[objective].progress}/${userData.activeQuest.objectives[objective].goal}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(progressMessage, threadID, messageID);
       return;
@@ -351,7 +351,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "No active quest to complete.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(noActiveQuest, threadID, messageID);
         return;
@@ -364,7 +364,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Quest objectives not fully completed. Check /qow status.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(notComplete, threadID, messageID);
         return;
@@ -386,7 +386,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Gained ${userData.activeQuest?.rewards.exp} EXP and ${userData.activeQuest?.rewards.gold} Gold. New Level: ${userData.level}.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(completeMessage, threadID, messageID);
       return;
@@ -401,7 +401,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Invalid chapter.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidChapter, threadID, messageID);
         return;
@@ -413,7 +413,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `${currentChapter.description}\n\nProgress: ${completedQuestsInChapter ? "Completed" : "In Progress"}\nQuests: ${currentChapter.quests.map(q => `${questsData[q].name} (${userData.completedQuests.includes(q) ? "Done" : "Pending"})`).join("\n")}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(chapterMessage, threadID, messageID);
       if (completedQuestsInChapter && currentChapter.endingChoices) {
@@ -423,7 +423,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `Choose an ending: ${Object.keys(currentChapter.endingChoices).map(c => `- ${c.replace("_", " ")}`).join("\n")}\nUse /qow chapter choice <choice>`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(choiceMessage, threadID, messageID);
       }
@@ -440,7 +440,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Invalid choice or chapter not ready for ending.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidChoice, threadID, messageID);
         return;
@@ -460,7 +460,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `${outcome.outcome}\nGained ${outcome.rewards.exp} EXP and ${outcome.rewards.gold} Gold. Advancing to Chapter ${userData.currentChapter}.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(choiceMessage, threadID, messageID);
       return;
@@ -474,7 +474,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "You are defeated! Use a health potion or wait to recover.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(deadMessage, threadID, messageID);
         return;
@@ -492,7 +492,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Victory! Gained 100 EXP and 50 Gold. New Level: " + userData.level,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(winMessage, threadID, messageID);
       } else {
@@ -503,7 +503,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Defeat! Lost 20 Health. Current Health: " + userData.health,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(loseMessage, threadID, messageID);
       }
@@ -523,7 +523,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: Object.entries(shopItems).map(([key, { cost, description }]) => `- ${key.replace("_", " ")}: ${description} (Cost: ${cost} Gold)`).join("\n"),
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(shopMessage, threadID, messageID);
       return;
@@ -543,7 +543,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Invalid item. Use /qow shop to see available items.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidItem, threadID, messageID);
         return;
@@ -556,7 +556,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough gold.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficientGold, threadID, messageID);
         return;
@@ -574,7 +574,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Purchased ${item.replace("_", " ")}.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(buyMessage, threadID, messageID);
       return;
@@ -589,7 +589,7 @@ const questOfWaverCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Invalid item or not in inventory.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidItem, threadID, messageID);
         return;
@@ -608,7 +608,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Used ${item.replace("_", " ")}. Updated stats: Health ${userData.health}, Mana ${userData.mana}.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(useMessage, threadID, messageID);
       return;
@@ -627,7 +627,7 @@ const questOfWaverCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: topUsers.map((u, i) => `${i + 1}. ${u.name} (Level ${u.level}, EXP ${u.exp})`).join("\n") || "No adventurers yet.",
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(leaderboardMessage, threadID, messageID);
       return;
@@ -639,7 +639,7 @@ const questOfWaverCommand: ShadowBot.Command = {
       headerStyle: "bold",
       bodyText: "Invalid command. Check usage with /qow help.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur Pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidCommand, threadID, messageID);
   },

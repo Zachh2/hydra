@@ -20,7 +20,7 @@ module.exports = {
           headerStyle: "bold",
           bodyText: "Please provide a prompt (e.g., /aria Hello sir).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }),
         threadID,
         messageID
@@ -37,7 +37,7 @@ module.exports = {
             headerStyle: "bold",
             bodyText: "Failed to process the command. No response from API.",
             bodyStyle: "sansSerif",
-            footerText: "Developed by: **Aljur Pogoy**",
+            footerText: "",
           }),
           threadID,
           messageID
@@ -50,7 +50,7 @@ module.exports = {
           headerStyle: "bold",
           bodyText: data.response,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }),
         threadID,
         messageID
@@ -64,7 +64,7 @@ module.exports = {
           headerStyle: "bold",
           bodyText: "Failed to process the command. Please try again later.",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }),
         threadID,
         messageID

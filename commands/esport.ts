@@ -30,7 +30,7 @@ const esportCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Database not available. Contact an admin.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }),
         event.threadID,
         event.messageID
@@ -46,7 +46,7 @@ const esportCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: body,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       })
 
     const action = args[0]?.toLowerCase()

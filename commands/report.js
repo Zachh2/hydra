@@ -15,7 +15,7 @@ module.exports = {
       headerStyle: "bold",
       bodyText: body,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur Pogoy**"
+      footerText: ""
     });
     if (!args[0] || !["admins", "moderators", "developers"].includes(args[0].toLowerCase())) {
       await api.sendMessage(styledMessage("Error", "Please specify a valid target (admins, moderators, developers). Usage: /report <target> <message>", "❌"), threadID, messageID);

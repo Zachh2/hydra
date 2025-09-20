@@ -25,7 +25,7 @@ const filteruserCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Missing threadID or messageID in event',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -38,7 +38,7 @@ const filteruserCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Please add the bot as a group admin to use this command',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -50,7 +50,7 @@ const filteruserCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Are you sure you want to delete group members with less than ${minimum} messages?\nReact to this message to confirm`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       const messageInfo = await new Promise((resolve, reject) => {
         api.sendMessage(promptMessage, threadID, (err: any, info: any) => {
@@ -107,7 +107,7 @@ const filteruserCommand: ShadowBot.Command = {
               headerStyle: 'bold',
               bodyText: msg.trim(),
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: **Aljur Pogoy**',
+              footerText: '',
             }),
             threadID,
             messageID,
@@ -147,7 +147,7 @@ const filteruserCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: msg.trim(),
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         }),
         threadID,
         messageID,
@@ -159,7 +159,7 @@ const filteruserCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Invalid usage. Use: ${filteruserCommand.config.usage}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }

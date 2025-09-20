@@ -49,7 +49,7 @@ const saoCommand: ShadowBot.Command = {
       headerStyle: "bold",
       bodyText: body,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur Pogoy**"
+      footerText: ""
     });
     const action = args[0]?.toLowerCase();
     const currentTime = Math.floor(Date.now() / 1000);

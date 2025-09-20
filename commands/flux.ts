@@ -21,7 +21,7 @@ const fluxCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Missing threadID or messageID in event',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -33,7 +33,7 @@ const fluxCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Please provide a prompt to generate an image.\nExample: /flux A futuristic robot flying over Tokyo',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(usageMessage, threadID, messageID);
     }
@@ -44,7 +44,7 @@ const fluxCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Generating image for: "${prompt}"\nPlease wait a moment...`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(waitMessage, threadID, messageID);
       const apiUrl = 'https://kaiz-apis.gleeze.com/api/flux';
@@ -61,7 +61,7 @@ const fluxCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Successfully generated image for:\n"${prompt}"\nEnjoy your image!`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(
         {
@@ -79,7 +79,7 @@ const fluxCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Failed to generate image.\nReason: ${error.response?.data?.message || error.message || 'Unknown error'}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }

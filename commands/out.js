@@ -42,7 +42,7 @@ module.exports = {
 
       `📋 Goodbye! Feel free to invite me back if needed.\n\n` +
 
-      `> Thank you for using our Cid Kagenou bot`;
+      `> Thank you for using our Chatbot`;
 
     try {
 
@@ -70,7 +70,7 @@ module.exports = {
 
         `  ┗━━━━━━━┛\n\n` +
 
-        `> Thank you for using our Cid Kagenou bot`;
+        `> Thank you for using our Chatbot`;
 
       api.sendMessage(errorMessage, threadID, messageID);
 

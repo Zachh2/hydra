@@ -23,7 +23,7 @@ const linkwarnCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: `${userName}, please be cautious when sharing links!`,
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         }),
         threadID,
         messageID,

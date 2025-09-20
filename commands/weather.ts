@@ -19,7 +19,7 @@ const weatherCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: 'Please provide a city (e.g., /weather Tokyo).',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         }),
         threadID,
         messageID,
@@ -34,7 +34,7 @@ const weatherCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `City: ${city}\nTemp: ${current.temp_C}°C\nCondition: ${current.weatherDesc[0].value}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(message, threadID, messageID);
     } catch (error) {
@@ -45,7 +45,7 @@ const weatherCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: 'Failed to fetch weather data.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         }),
         threadID,
         messageID,

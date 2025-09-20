@@ -20,7 +20,7 @@ const factCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: data.text,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(message, threadID, messageID);
     } catch (error) {
@@ -31,7 +31,7 @@ const factCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: 'Failed to fetch fact.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         }),
         threadID,
         messageID,

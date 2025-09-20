@@ -21,7 +21,7 @@ const memeCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Title: ${data.title}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage({ body: message, attachment: memeStream }, threadID, messageID);
     } catch (error) {
@@ -32,7 +32,7 @@ const memeCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: 'Failed to fetch meme.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         }),
         threadID,
         messageID,

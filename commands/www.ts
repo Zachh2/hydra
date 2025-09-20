@@ -21,7 +21,7 @@ const wwwCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Missing threadID or messageID in event',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -53,7 +53,7 @@ const wwwCommand: ShadowBot.Command = {
             headerStyle: 'bold',
             bodyText: messageBody,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: **Aljur Pogoy**',
+            footerText: '',
           }),
           mentions: arraytag,
           attachment: response.data,
@@ -69,7 +69,7 @@ const wwwCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Error: ${error.message || 'Unknown error'}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }

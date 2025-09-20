@@ -29,7 +29,7 @@ const wyrCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: options,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       api.sendMessage(wyrMessage, threadID, messageID);
     } catch (error) {
@@ -40,7 +40,7 @@ const wyrCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Err ${error.message}`, 
         bodyStyle: "default",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       api.sendMessage(errorMessage, threadID, messageID);
     }

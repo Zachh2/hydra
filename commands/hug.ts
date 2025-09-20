@@ -29,7 +29,7 @@ const hugCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "❌ Please reply to a user, mention a user, or provide a UID to hug!",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -56,7 +56,7 @@ const hugCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Hug well",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(
         { body: successMessage, attachment: fs.createReadStream(filePath) },
@@ -72,7 +72,7 @@ const hugCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Error generating hug image: ${error.message}`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       api.sendMessage(errorMessage, threadID, messageID);
     }

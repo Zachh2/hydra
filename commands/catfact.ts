@@ -24,7 +24,7 @@ const catfactCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: fact,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
 
       await api.sendMessage(styledMessage, threadID, messageID);
@@ -36,7 +36,7 @@ const catfactCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Oops! Couldn’t fetch a cat fact right now. Try again later!",
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }

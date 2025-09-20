@@ -33,7 +33,7 @@ const busyCommand = {
             headerStyle: 'bold',
             bodyText: `${userName} (${userID}) is busy.\nReason: ${message}`,
             bodyStyle: 'monospace',
-            footerText: 'Developed by: **Aljur Pogoy**',
+            footerText: '',
           });
           await api.sendMessage(
             { body: styledMessage, mentions: [{ tag: `@${userName}`, id: userID }] },
@@ -51,7 +51,7 @@ const busyCommand = {
         headerStyle: 'bold',
         bodyText: `${LINE}\nFailed to process busy response: ${error.message}\n${LINE}`,
         bodyStyle: 'bold',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(styledMessage, threadID, messageID);
     }
@@ -113,7 +113,7 @@ const busyCommand = {
           headerStyle: 'bold',
           bodyText: `${LINE}\nGlobal busy message set for ${userName} (${senderID}): ${message}\n${LINE}`,
           bodyStyle: 'bold',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         });
         await api.sendMessage(styledMessage, threadID, messageID);
         console.log(`[EVENT_DEBUG] busy set globally for user ${senderID}`);

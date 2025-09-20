@@ -23,7 +23,7 @@ const reloadCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Commands reloaded successfully!",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(successMessage, threadID, messageID);
     } catch (error) {
@@ -33,7 +33,7 @@ const reloadCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Error reloading commands: ${error.message}`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(errorMessage, threadID, messageID);
 

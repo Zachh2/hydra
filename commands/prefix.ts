@@ -24,7 +24,7 @@ const prefixCommand: ShadowBot.Command = {
           headerStyle: "italic",
           bodyText: "ERROR.",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         return api.sendMessage(errorMessage, threadID, messageID);
       }
@@ -55,7 +55,7 @@ const prefixCommand: ShadowBot.Command = {
         headerStyle: "double_struck",
         bodyText: "Failed to display the prefix. Mission failed.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
 
       api.sendMessage(errorMessage, threadID, messageID);

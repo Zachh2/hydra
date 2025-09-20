@@ -56,7 +56,7 @@ const baybayinCommand: ShadowBot.Command = {
 
         contentFont: "fancy_italic",
 
-        content: `❌ Please provide text to convert.\n> Usage: #baybayin <text>\n> Example: #baybayin hello\n> Thanks for using Cid Kagenou bot`,
+        content: `❌ Please provide text to convert.\n> Usage: #baybayin <text>\n> Example: #baybayin hello\n> Thanks for using Chatbot`,
 
       });
 
@@ -80,7 +80,7 @@ const baybayinCommand: ShadowBot.Command = {
 
       const baybayinText = response.data.result || "No response from Baybayin API.";
 
-      const content = `✍️ Converted "${query}" to Baybayin:\n> ${baybayinText}\n> Thanks for using Cid Kagenou bot`;
+      const content = `✍️ Converted "${query}" to Baybayin:\n> ${baybayinText}\n> Thanks for using Chatbot`;
 
       const msg = format({
 
@@ -112,7 +112,7 @@ const baybayinCommand: ShadowBot.Command = {
 
         contentFont: "fancy_italic",
 
-        content: `┏━━━━━━━┓\n┃ Error: ${error.message}\n┗━━━━━━━┛\n> Thanks for using Cid Kagenou bot`,
+        content: `┏━━━━━━━┓\n┃ Error: ${error.message}\n┗━━━━━━━┛\n> Thanks for using Chatbot`,
 
       });
 

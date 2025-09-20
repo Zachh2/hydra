@@ -24,7 +24,7 @@ const helpCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: "Commands directory not found.",
             bodyStyle: "sansSerif",
-            footerText: "Developed by: **Aljur Pogoy**"
+            footerText: ""
           }),
           threadID,
           (err: any, info: any) => {
@@ -70,7 +70,7 @@ const helpCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: "Error loading command list.",
             bodyStyle: "sansSerif",
-            footerText: "Developed by: **Aljur Pogoy**"
+            footerText: ""
           }),
           threadID,
           (err: any, info: any) => {
@@ -218,7 +218,7 @@ ${LINE}
 ${totalPages > 1 ? "> 🔄 Next page: /help " + (page + 1) + "\n" : ""}
  ℹ️ Details: ${prefix}help <command>
  🌟 All Commands: ${prefix}help all
- 🌟 Enjoy Cid Kagenou Bot!
+ 🌟 Enjoy Chatbot!
     `.trim();
 
     await new Promise(resolve => {

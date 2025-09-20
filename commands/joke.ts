@@ -18,7 +18,7 @@ const jokeCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `${data.setup}\n${data.punchline}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(message, threadID, messageID);
     } catch (error) {
@@ -29,7 +29,7 @@ const jokeCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: 'Failed to fetch joke.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         }),
         threadID,
         messageID,

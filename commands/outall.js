@@ -34,7 +34,7 @@ module.exports = {
 
           emojis: "🚪",
 
-          content: `❌ Only admins can use this command.\n> Thanks for using Cid Kagenou bot`
+          content: `❌ Only admins can use this command.\n> Thanks for using Chatbot`
 
         });
 
@@ -58,7 +58,7 @@ module.exports = {
 
           emojis: "🚪",
 
-          content: `❌ Database not initialized. Ensure MongoDB is connected.\n> Contact bot admin if this persists.\n> Thanks for using Cid Kagenou bot`
+          content: `❌ Database not initialized. Ensure MongoDB is connected.\n> Contact bot admin if this persists.\n> Thanks for using Chatbot`
 
         });
 
@@ -84,7 +84,7 @@ module.exports = {
 
           emojis: "🚪",
 
-          content: `❌ No threads found in the database to leave.\n> Thanks for using Cid Kagenou bot`
+          content: `❌ No threads found in the database to leave.\n> Thanks for using Chatbot`
 
         });
 
@@ -122,7 +122,7 @@ module.exports = {
 
       console.log(`[OutAll] Cleared all ${threads.length} threads from the database`);
 
-      const content = `🚪 Left ${leftCount} thread(s) successfully.\n> Cleared thread data from the database.\n> Thanks for using Cid Kagenou bot`;
+      const content = `🚪 Left ${leftCount} thread(s) successfully.\n> Cleared thread data from the database.\n> Thanks for using Chatbot`;
 
       const msg = format({
 
@@ -156,7 +156,7 @@ module.exports = {
 
         emojis: "🚪",
 
-        content: `┏━━━━━━━┓\n┃ Error: ${error.message}\n┗━━━━━━━┛\n> Thanks for using Cid Kagenou bot`
+        content: `┏━━━━━━━┓\n┃ Error: ${error.message}\n┗━━━━━━━┛\n> Thanks for using Chatbot`
 
       });
 

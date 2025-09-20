@@ -20,7 +20,7 @@ const hentaigifCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Missing threadID or messageID in event',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -35,7 +35,7 @@ const hentaigifCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: 'No GIFs found.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         });
         return api.sendMessage(errorMessage, threadID, messageID);
       }
@@ -49,7 +49,7 @@ const hentaigifCommand: ShadowBot.Command = {
             headerStyle: 'bold',
             bodyText: 'Here’s your random hentai GIF!',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: **Aljur Pogoy**',
+            footerText: '',
           }),
           attachment: gifResponse.data,
         },
@@ -64,7 +64,7 @@ const hentaigifCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Error: ${error.message || 'Unknown error'}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }

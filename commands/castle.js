@@ -34,7 +34,7 @@ module.exports = {
 
         contentfont: "fancy",
 
-        footer: "Developed by: **Aljur pogoy**",
+        footer: "",
 
       });
 
@@ -56,7 +56,7 @@ module.exports = {
 
         contentfont: "fancy",
 
-        footer: "Developed by: **Aljur pogoy**",
+        footer: "",
 
       });
 

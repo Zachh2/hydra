@@ -22,7 +22,7 @@ const scCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Please provide a search query.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       return api.sendMessage(usageMessage, threadID, messageID);
     }
@@ -54,7 +54,7 @@ const scCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Found "${args.join(" ")}"!`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
 
       await api.sendMessage(
@@ -75,7 +75,7 @@ const scCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Error fetching audio: ${error.message}`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
 
       api.sendMessage(errorMessage, threadID, messageID);

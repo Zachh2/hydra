@@ -52,7 +52,7 @@ module.exports = {
 
       });
 
-      const message = `${caption}\n\n> Thank you for using our Cid Kagenou bot`;
+      const message = `${caption}\n\n> Thank you for using our Chatbot`;
 
       const imageStream = fs.createReadStream(tempImagePath);
 
@@ -78,7 +78,7 @@ module.exports = {
 
       console.error("❌ Error in hololive command:", error.message);
 
-      const errorMessage = `════『 𝗛𝗢𝗟𝗢𝗟𝗜𝗩𝗘 』════\n\n  ┏━━━━━━━┓\n  ┃ 『 𝗜𝗡𝗙𝗢 』 An error occurred while fetching the Hololive image.\n  ┃ ${error.message}\n  ┗━━━━━━━┛\n\n> Thank you for using our Cid Kagenou bot`;
+      const errorMessage = `════『 𝗛𝗢𝗟𝗢𝗟𝗜𝗩𝗘 』════\n\n  ┏━━━━━━━┓\n  ┃ 『 𝗜𝗡𝗙𝗢 』 An error occurred while fetching the Hololive image.\n  ┃ ${error.message}\n  ┗━━━━━━━┛\n\n> Thank you for using our Chatbot`;
 
       api.sendMessage(errorMessage, threadID, messageID);
 

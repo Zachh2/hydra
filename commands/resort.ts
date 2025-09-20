@@ -74,7 +74,7 @@ const resortCommand: ShadowBot.Command = {
           "51. investment\n52. partnership\n53. marketing\n54. branding\n55. logo\n56. website\n57. social media\n58. newsletter\n59. loyalty program\n60. referral program\n" +
           "Use /resort <command> to execute.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(helpMessage, threadID, messageID);
       return;
@@ -89,7 +89,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `You already own ${userData.resortName}. Use /resort dashboard to view.`,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(alreadyOwned, threadID, messageID);
         return;
@@ -102,7 +102,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Please provide a resort name. Usage: /resort buy <name>",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(noName, threadID, messageID);
         return;
@@ -116,7 +116,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `The name "${resortName}" is already taken.`,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(nameTaken, threadID, messageID);
         return;
@@ -144,7 +144,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Purchased resort "${resortName}"! Starting money: 10000. Rank: E.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(buyMessage, threadID, messageID);
       return;
@@ -157,7 +157,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "You need to buy a resort first. Usage: /resort buy <name>",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(noResort, threadID, messageID);
       return;
@@ -171,7 +171,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Name: ${userData.resortName}\nLevel: ${userData.level}\nEXP: ${userData.exp}\nRank: ${userData.rank}\nMoney: ${userData.money}\nStaff: ${Object.entries(userData.staff).map(([k, v]) => `${k}: ${v}`).join(", ") || "None"}\nFacilities: ${Object.entries(userData.facilities).map(([k, v]) => `${k}: ${v}`).join(", ") || "None"}\nGuests: ${userData.guests}\nRating: ${userData.rating}\nRevenue: ${userData.revenue}\nExpenses: ${userData.expenses}\nProfit: ${userData.profit}`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(dashboardMessage, threadID, messageID);
       return;
@@ -197,7 +197,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -211,7 +211,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Resort cleaned! +0.1 rating, +50 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(cleanMessage, threadID, messageID);
       return;
@@ -225,7 +225,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Categories:\n1. Beach Resorts\n2. Mountain Resorts\n3. Luxury Hotels\n... (20 categories)\nUse /resort buy <item> to purchase.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(shopMessage, threadID, messageID);
       return;
@@ -241,7 +241,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -252,7 +252,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough money (5000 required).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -268,7 +268,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Resort restored! -5000 money, +0.5 rating, +200 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(restoreMessage, threadID, messageID);
       return;
@@ -284,7 +284,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -298,7 +298,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Claimed ${claimAmount} money from profits!`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(claimMessage, threadID, messageID);
       return;
@@ -314,7 +314,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -328,7 +328,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Swept the resort! +0.05 rating, +30 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(sweepMessage, threadID, messageID);
       return;
@@ -344,7 +344,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -355,7 +355,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough money (2000 required).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -371,7 +371,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Decorated the resort! -2000 money, +0.2 rating, +100 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(decorateMessage, threadID, messageID);
       return;
@@ -389,7 +389,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `Not enough money (${cost} required).`,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -405,7 +405,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Hired ${quantity} ${role}! -${cost} money, +${50 * quantity} EXP.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(hireMessage, threadID, messageID);
       return;
@@ -422,7 +422,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough staff in that role.",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -437,7 +437,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Fired ${quantity} ${role}! +${500 * quantity} money refund.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(fireMessage, threadID, messageID);
       return;
@@ -454,7 +454,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `Not enough money (${cost} required).`,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -470,7 +470,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Upgraded ${facility}! -${cost} money, +150 EXP.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(upgradeMessage, threadID, messageID);
       return;
@@ -484,7 +484,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Current status: Guests ${userData.guests}, Staff count ${Object.values(userData.staff).reduce((a, b) => a + b, 0)}, Facilities ${Object.values(userData.facilities).reduce((a, b) => a + b, 0)}.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(manageMessage, threadID, messageID);
       return;
@@ -498,7 +498,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Current guests: ${userData.guests}.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(guestsMessage, threadID, messageID);
       return;
@@ -512,7 +512,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Current revenue: ${userData.revenue}.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(revenueMessage, threadID, messageID);
       return;
@@ -526,7 +526,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Current expenses: ${userData.expenses}.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(expensesMessage, threadID, messageID);
       return;
@@ -540,7 +540,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Current profit: ${userData.profit}.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(profitMessage, threadID, messageID);
       return;
@@ -554,7 +554,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Current rating: ${userData.rating.toFixed(1)}.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(ratingMessage, threadID, messageID);
       return;
@@ -569,7 +569,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: reviewList,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(reviewMessage, threadID, messageID);
       return;
@@ -586,7 +586,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Invalid review index or response. Usage: /resort respond <index> <response>",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalid, threadID, messageID);
         return;
@@ -599,7 +599,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Responded to review #${reviewIndex + 1}! +0.05 rating.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(respondMessage, threadID, messageID);
       return;
@@ -615,7 +615,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -626,7 +626,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough money (1500 required).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -642,7 +642,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Advertised resort! -1500 money, +${userData.guests} guests, +100 EXP.`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(advertiseMessage, threadID, messageID);
       return;
@@ -658,7 +658,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -671,7 +671,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Offered discounts! +10 guests, -500 revenue.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(discountMessage, threadID, messageID);
       return;
@@ -687,7 +687,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -698,7 +698,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough money (1000 required).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -715,7 +715,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Created guest packages! -1000 money, +8 guests, +1200 revenue, +80 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(packageMessage, threadID, messageID);
       return;
@@ -731,7 +731,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -742,7 +742,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough money (3000 required).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -759,7 +759,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Hosted an event! -3000 money, +15 guests, +0.3 rating, +150 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(eventMessage, threadID, messageID);
       return;
@@ -775,7 +775,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -786,7 +786,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough money (2000 required).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -802,7 +802,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Provided catering! -2000 money, +2500 revenue, +100 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(cateringMessage, threadID, messageID);
       return;
@@ -818,7 +818,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -829,7 +829,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough money (4000 required).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -846,7 +846,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Added spa services! -4000 money, +0.4 rating, +200 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(spaMessage, threadID, messageID);
       return;
@@ -862,7 +862,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -873,7 +873,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough money (3500 required).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -890,7 +890,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Added fitness facilities! -3500 money, +0.3 rating, +180 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(fitnessMessage, threadID, messageID);
       return;
@@ -906,7 +906,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -920,7 +920,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Maintained pool! +0.2 rating, +60 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(poolMessage, threadID, messageID);
       return;
@@ -936,7 +936,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -950,7 +950,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Managed beach activities! +5 guests, +70 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(beachMessage, threadID, messageID);
       return;
@@ -966,7 +966,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -977,7 +977,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough money (2500 required).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -994,7 +994,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Offered activities! -2500 money, +12 guests, +0.25 rating, +120 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(activitiesMessage, threadID, messageID);
       return;
@@ -1010,7 +1010,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -1021,7 +1021,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough money (1800 required).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -1038,7 +1038,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Provided tours! -1800 money, +7 guests, +2000 revenue, +90 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(tourMessage, threadID, messageID);
       return;
@@ -1054,7 +1054,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: cooldownError,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         }), threadID, messageID);
         return;
       }
@@ -1065,7 +1065,7 @@ const resortCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Not enough money (5000 required).",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: **Aljur Pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficient, threadID, messageID);
         return;
@@ -1082,7 +1082,7 @@ const resortCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Offered transportation! -5000 money, +20 guests, +0.5 rating, +250 EXP.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(transportationMessage, threadID, messageID);
       return;
@@ -1095,7 +1095,7 @@ const resortCommand: ShadowBot.Command = {
       headerStyle: "bold",
       bodyText: "Invalid command. Use /resort for help.",
       bodyStyle: "sansSerif",
-      footerText: "Developed by: **Aljur Pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalid, threadID, messageID);
   },

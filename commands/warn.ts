@@ -35,7 +35,7 @@ const warnCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Please mention a user or reply to their message.\nExample: /warn @user Spamming',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       console.log('Warn error: No target user specified');
       return api.sendMessage(errorMessage, threadID, messageID);
@@ -48,7 +48,7 @@ const warnCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Cannot warn the bot!',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       console.log('Warn error: Attempted to warn bot');
       return api.sendMessage(errorMessage, threadID, messageID);
@@ -86,7 +86,7 @@ const warnCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: `${userName} was kicked after 3 warnings: ${userWarnings.reasons.join(', ')}.`,
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         });
         await api.sendMessage(kickMessage, threadID, messageID);
       } else {
@@ -96,7 +96,7 @@ const warnCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: `${userName}, you’ve been warned (${userWarnings.count}/3) for: ${reason}.`,
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         });
         await api.sendMessage(warningMessage, threadID, messageID);
       }
@@ -108,7 +108,7 @@ const warnCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Failed to warn user: ${error.message || 'Unknown error'}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }

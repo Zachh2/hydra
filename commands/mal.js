@@ -32,7 +32,7 @@ module.exports = {
 
         bodyStyle: "bold",
 
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
 
       });
 
@@ -150,7 +150,7 @@ module.exports = {
 
         bodyStyle: "bold",
 
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
 
       });
 

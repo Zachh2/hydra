@@ -26,7 +26,7 @@ module.exports = {
 
       return api.sendMessage(
 
-        `════『 𝗦𝗧𝗔𝗧𝗦 』════\n\n❌ Only admins can use this command.\n\n> Thank you for using our Cid Kagenou bot`,
+        `════『 𝗦𝗧𝗔𝗧𝗦 』════\n\n❌ Only admins can use this command.\n\n> Thank you for using our Chatbot`,
 
         threadID,
 
@@ -74,7 +74,7 @@ module.exports = {
 
     return api.sendMessage(
 
-      `════『 𝗦𝗧𝗔𝗧𝗦 』════\n\n📊 Total messages handled: ${statsData.messagesHandled}\n📊 Active threads: ${statsData.activeThreads}\n\n> Thank you for using our Cid Kagenou bot`,
+      `════『 𝗦𝗧𝗔𝗧𝗦 』════\n\n📊 Total messages handled: ${statsData.messagesHandled}\n📊 Active threads: ${statsData.activeThreads}\n\n> Thank you for using our Chatbot`,
 
       threadID,
 

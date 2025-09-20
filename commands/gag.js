@@ -241,7 +241,7 @@ module.exports = {
       headerStyle: "bold",
       bodyText: body,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur Pogoy**"
+      footerText: ""
     });
     const applyPetEffects = async (userData, threadID) => {
       let effects = { seeds: [], replanted: [], pollinated: [], boosted: [], protected: [], xp: [], zombified: [], stolen: [] };

@@ -24,7 +24,7 @@ const spotifyCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Missing threadID or messageID in event',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -35,7 +35,7 @@ const spotifyCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Please provide a search keyword.\nUsage: spotify [song name]',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -46,7 +46,7 @@ const spotifyCommand: ShadowBot.Command = {
       headerStyle: 'bold',
       bodyText: 'Tracking song, please wait...',
       bodyStyle: 'sansSerif',
-      footerText: 'Developed by: **Aljur Pogoy**',
+      footerText: '',
     });
     await api.sendMessage(waitMessage, threadID, messageID);
     try {
@@ -60,7 +60,7 @@ const spotifyCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: 'No Spotify track found.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         });
         return api.sendMessage(errorMessage, threadID, messageID);
       }
@@ -86,7 +86,7 @@ const spotifyCommand: ShadowBot.Command = {
             headerStyle: 'bold',
             bodyText: `Title: ${title}\nArtist: ${artist}`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: **Aljur Pogoy**',
+            footerText: '',
           }),
           attachment: fs.createReadStream(imgPath),
         },
@@ -100,7 +100,7 @@ const spotifyCommand: ShadowBot.Command = {
                 headerStyle: 'bold',
                 bodyText: 'Here’s your Spotify track!',
                 bodyStyle: 'sansSerif',
-                footerText: 'Developed by: **Aljur Pogoy**',
+                footerText: '',
               }),
               attachment: fs.createReadStream(audioPath),
             },
@@ -124,7 +124,7 @@ const spotifyCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'An error occurred while processing your request.',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }

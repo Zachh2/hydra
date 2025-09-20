@@ -97,7 +97,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `You are already registered as ${userData.nameS2} in Season 2. Use /sl s2 status to check your stats.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(alreadyRegistered, threadID, messageID);
         return;
@@ -109,7 +109,7 @@ const soloLevelingCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Please choose a character by replying with the number:\n${characterList}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       let sentMessageID: string;
       await new Promise((resolve) => {
@@ -132,7 +132,7 @@ const soloLevelingCommand: ShadowBot.Command = {
               headerStyle: "bold",
               bodyText: "Invalid character number. Please reply with a valid number.",
               bodyStyle: "bold",
-              footerText: "Developed by: **Aljur pogoy**",
+              footerText: "",
             }),
             threadID,
             event.messageID
@@ -150,7 +150,7 @@ const soloLevelingCommand: ShadowBot.Command = {
               headerStyle: "bold",
               bodyText: `The character "${selectedCharacter}" is already taken. Please choose another.`,
               bodyStyle: "bold",
-              footerText: "Developed by: **Aljur pogoy**",
+              footerText: "",
             }),
             threadID,
             event.messageID
@@ -172,7 +172,7 @@ const soloLevelingCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: `Registered as ${selectedCharacter} in Season 2! Use /sl s2 status to check your stats.`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           }),
           threadID,
           event.messageID
@@ -190,7 +190,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "You need to register for Season 2 first. Usage: /sl s2 register",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(notRegistered, threadID, messageID);
         return;
@@ -203,7 +203,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `Cooldown active. Wait ${Math.ceil(remaining / 60)} minutes.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(cooldownMessage, threadID, messageID);
         return;
@@ -220,7 +220,7 @@ const soloLevelingCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `You fought in a war! Gained ${magicCrystals} Magic Crystals and ${holyCrystals} Holy Crystals.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(warMessage, threadID, messageID);
       return;
@@ -234,7 +234,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "You need to register for Season 2 first. Usage: /sl s2 register",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(notRegistered, threadID, messageID);
         return;
@@ -246,7 +246,7 @@ const soloLevelingCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Name: ${userData.nameS2}\nLevel: ${Math.max(1, Number(userData.level) || 1)}\nEXP: ${Math.max(0, Number(userData.expS2) || 0)}\nRank: ${userData.rank || "E"}\nGuild: ${userData.guildS2 || "None"}\nShadows: ${userData.shadowsS2.length > 0 ? userData.shadowsS2.map(s => `${s.name} (${s.nickname})`).join(", ") : "None"}\nStats: Strength ${Math.max(0, Number(stats.strength) || 0)}, Agility ${Math.max(0, Number(stats.agility) || 0)}, Mana ${Math.max(0, Number(stats.mana) || 0)}\nMagic Crystals: ${Math.max(0, Number(userData.inventoryS2.magicCrystals) || 0)}\nHoly Crystals: ${Math.max(0, Number(userData.inventoryS2.holyCrystals) || 0)}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(statusMessage, threadID, messageID);
       return;
@@ -267,7 +267,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           ? topHunters.map((h, i) => `${i + 1}. ${h.name} (Level ${Math.max(1, Number(h.level) || 1)}, ${Math.max(0, Number(h.exp) || 0)} EXP, Rank ${h.rank || "E"})`).join("\n")
           : "No hunters ranked yet.",
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(leaderboardMessage, threadID, messageID);
       return;
@@ -281,7 +281,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "You need to register for Season 2 first. Usage: /sl s2 register",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(notRegistered, threadID, messageID);
         return;
@@ -312,7 +312,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `Victory! ${userData.nameS2} defeated ${enemy}! Gained +100 Strength, +100 Agility, +100 Mana, 1000 EXP. New Level: ${userData.level}, Rank: ${userData.rank}${isMonarch && userData.rank === "S" ? `. Reply with 'arise ${enemy} <nickname>' to awaken this Shadow Monarch!` : "."}`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
       } else {
         userData.expS2 = Math.max(0, Number(userData.expS2) || 0) + 200;
@@ -324,7 +324,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `Defeated by ${enemy}! Gained 200 EXP. New Level: ${userData.level}, Rank: ${userData.rank}. Train harder!`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
       }
       userData.stats = stats;
@@ -369,7 +369,7 @@ const soloLevelingCommand: ShadowBot.Command = {
                   headerStyle: "bold",
                   bodyText: `Awakened ${normalizedEnemy} as ${nickname}! Gain ${boosts.strength} Strength, ${boosts.agility} Agility, ${boosts.mana} Mana.`,
                   bodyStyle: "bold",
-                  footerText: "Developed by: **Aljur pogoy**",
+                  footerText: "",
                 }),
                 threadID,
                 event.messageID
@@ -392,7 +392,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "You need to register for Season 2 first. Usage: /sl s2 register",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(notRegistered, threadID, messageID);
         return;
@@ -437,7 +437,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           return `- ${key.replace("_", " ")}: ${details.effect} (Cost: ${costStr})`;
         }).join("\n") + "\nReply with 'buy <item> <quantity>' to purchase.",
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       let sentMessageID: string;
       await new Promise((resolve) => {
@@ -464,7 +464,7 @@ const soloLevelingCommand: ShadowBot.Command = {
                 headerStyle: "bold",
                 bodyText: "Invalid item or quantity. Reply with 'buy <item> <quantity>'.",
                 bodyStyle: "bold",
-                footerText: "Developed by: **Aljur pogoy**",
+                footerText: "",
               }),
               threadID,
               event.messageID
@@ -485,7 +485,7 @@ const soloLevelingCommand: ShadowBot.Command = {
                 headerStyle: "bold",
                 bodyText: `Not enough resources. Need ${totalMagicCrystals} Magic Crystals, ${totalHolyCrystals} Holy Crystals.`,
                 bodyStyle: "bold",
-                footerText: "Developed by: **Aljur pogoy**",
+                footerText: "",
               }),
               threadID,
               event.messageID
@@ -520,7 +520,7 @@ const soloLevelingCommand: ShadowBot.Command = {
               headerStyle: "bold",
               bodyText: `Purchased ${quantity} ${item.replace("_", " ")}! ${itemData.effect}.`,
               bodyStyle: "bold",
-              footerText: "Developed by: **Aljur pogoy**",
+              footerText: "",
             }),
             threadID,
             event.messageID
@@ -539,7 +539,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "You need to register for Season 2 first. Usage: /sl s2 register",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(notRegistered, threadID, messageID);
         return;
@@ -553,7 +553,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Invalid tier. Use /sl s2 dungeon <D/C/B/A/S>.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidTier, threadID, messageID);
         return;
@@ -566,7 +566,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `Cooldown active. Wait ${Math.ceil(remaining / 60)} minutes.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(cooldownMessage, threadID, messageID);
         return;
@@ -592,7 +592,7 @@ const soloLevelingCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Cleared ${tier}-tier dungeon! Gained ${expGain} EXP, ${rewards[tier].magicCrystals} Magic Crystals, ${rewards[tier].holyCrystals} Holy Crystals. New Level: ${userData.level}, Rank: ${userData.rank}.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(dungeonMessage, threadID, messageID);
       return;
@@ -606,7 +606,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "You need to register for Season 2 first. Usage: /sl s2 register",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(notRegistered, threadID, messageID);
         return;
@@ -624,7 +624,7 @@ const soloLevelingCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: `Already in ${userData.guildS2}. Leave to create a new one.`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(alreadyInGuild, threadID, messageID);
           return;
@@ -636,7 +636,7 @@ const soloLevelingCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: `Guild ${guildName} already exists. Join it instead!`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(guildExists, threadID, messageID);
           return;
@@ -652,7 +652,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `Created Guild: ${guildName}. +50 Group Strength.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(createMessage, threadID, messageID);
         return;
@@ -666,7 +666,7 @@ const soloLevelingCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: "You are not in a Season 2 guild to leave!",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noGuild, threadID, messageID);
           return;
@@ -681,7 +681,7 @@ const soloLevelingCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: "Your Season 2 guild no longer exists. You have been removed.",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noGuildFound, threadID, messageID);
           return;
@@ -699,7 +699,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `You have left ${currentGuild.name}.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(leaveMessage, threadID, messageID);
         return;
@@ -713,7 +713,7 @@ const soloLevelingCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: "No Season 2 guilds have been created yet.",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noGuilds, threadID, messageID);
           return;
@@ -725,7 +725,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: `Active Season 2 Guilds:\n${guildList}`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(listMessage, threadID, messageID);
         return;
@@ -739,7 +739,7 @@ const soloLevelingCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: "You must be in a Season 2 guild to fight!",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noGuild, threadID, messageID);
           return;
@@ -753,7 +753,7 @@ const soloLevelingCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: "No valid opponent guild found or you can't fight your own guild!",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noTarget, threadID, messageID);
           return;
@@ -771,7 +771,7 @@ const soloLevelingCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: `Victory! ${myGuild.name} defeated ${targetGuild.name} (${myStrength} vs ${targetStrength})! Gained 10 Magic Crystals and 5 Holy Crystals.`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(fightMessage, threadID, messageID);
         } else {
@@ -781,7 +781,7 @@ const soloLevelingCommand: ShadowBot.Command = {
             headerStyle: "bold",
             bodyText: `Defeated! ${myGuild.name} lost to ${targetGuild.name} (${myStrength} vs ${targetStrength}). Train harder!`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(fightMessage, threadID, messageID);
         }
@@ -794,7 +794,7 @@ const soloLevelingCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Invalid guild command. Use /sl s2 guild [create <name> | leave | list | war].",
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(invalidGuildCommand, threadID, messageID);
       return;
@@ -808,7 +808,7 @@ const soloLevelingCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "You need to register for Season 2 first. Usage: /sl s2 register",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(notRegistered, threadID, messageID);
         return;
@@ -820,7 +820,7 @@ const soloLevelingCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Magic Crystals: ${Math.max(0, Number(userData.inventoryS2.magicCrystals) || 0)}\nHoly Crystals: ${Math.max(0, Number(userData.inventoryS2.holyCrystals) || 0)}\nItems: ${items}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(inventoryMessage, threadID, messageID);
       return;
@@ -841,7 +841,7 @@ const soloLevelingCommand: ShadowBot.Command = {
       ? topHunters.map((h, i) => `${i + 1}. ${h.nameS2 || "Unknown"} (Level ${Math.max(1, Number(h.level) || 1)}, S2 EXP: ${Math.max(0, Number(h.expS2) || 0)}, Rank ${h.rank || "E"})`).join("\n")
       : "No hunters ranked in Season 2 yet.",
     bodyStyle: "bold",
-    footerText: "Developed by: **Aljur pogoy**",
+    footerText: "",
   });
   await api.sendMessage(leaderboardMessage, threadID, messageID);
   return;
@@ -854,7 +854,7 @@ const soloLevelingCommand: ShadowBot.Command = {
       headerStyle: "bold",
       bodyText: "You need to register for Season 2 first. Usage: /sl s2 register",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(notRegistered, threadID, messageID);
     return;
@@ -867,7 +867,7 @@ const soloLevelingCommand: ShadowBot.Command = {
       headerStyle: "bold",
       bodyText: `Invalid shadow name. Check your shadows with /sl s2 shadowlist. Usage: /sl s2 shadowtrain <shadow_name>`,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidShadow, threadID, messageID);
     return;
@@ -881,7 +881,7 @@ const soloLevelingCommand: ShadowBot.Command = {
       headerStyle: "bold",
       bodyText: `Not enough materials. Required: Magic Crystals x${materialCost.magicCrystals}, Holy Crystals x${materialCost.holyCrystals}`,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(insufficientMaterials, threadID, messageID);
     return;
@@ -899,7 +899,7 @@ const soloLevelingCommand: ShadowBot.Command = {
     headerStyle: "bold",
     bodyText: `Trained shadow ${shadow.name} (${shadow.nickname}) to Level ${shadow.level}! Gained 300 EXP. New Level: ${userData.level}, Rank: ${userData.rank}.`,
     bodyStyle: "bold",
-    footerText: "Developed by: **Aljur pogoy**",
+    footerText: "",
   });
   await api.sendMessage(trainMessage, threadID, messageID);
   return;
@@ -919,7 +919,7 @@ if (action === "craft") {
       headerStyle: "bold",
       bodyText: `Invalid item. Available items: ${Object.keys(craftRecipes).map(k => k.replace("_", " ")).join(", ")}. Usage: /sl craft <item>`,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidItem, threadID, messageID);
     return;
@@ -934,7 +934,7 @@ if (action === "craft") {
       headerStyle: "bold",
       bodyText: `Not enough materials. Required: ${materialList}`,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(insufficientMaterials, threadID, messageID);
     return;
@@ -955,7 +955,7 @@ if (action === "craft") {
     headerStyle: "bold",
     bodyText: `Crafted ${item.replace("_", " ")}! ${recipe.effect}`,
     bodyStyle: "bold",
-    footerText: "Developed by: **Aljur pogoy**",
+    footerText: "",
   });
   await api.sendMessage(craftMessage, threadID, messageID);
   return;
@@ -972,7 +972,7 @@ if (action === "shadowtrain") {
       headerStyle: "bold",
       bodyText: `Invalid shadow name. Check your shadows with /sl shadowlist. Usage: /sl shadowtrain <shadow_name>`,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidShadow, threadID, messageID);
     return;
@@ -986,7 +986,7 @@ if (action === "shadowtrain") {
       headerStyle: "bold",
       bodyText: `Not enough materials. Required: Mana Crystal x${materialCost.mana_crystal}`,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(insufficientMaterials, threadID, messageID);
     return;
@@ -1004,7 +1004,7 @@ if (action === "shadowtrain") {
     headerStyle: "bold",
     bodyText: `Trained shadow ${shadow.name} (${shadow.nickname}) to Level ${shadow.level}! Gained 200 EXP. New Level: ${userData.level}, Rank: ${userData.rank}.`,
     bodyStyle: "bold",
-    footerText: "Developed by: **Aljur pogoy**",
+    footerText: "",
   });
   await api.sendMessage(trainMessage, threadID, messageID);
   return;
@@ -1020,7 +1020,7 @@ if (action === "shadowtrain") {
           headerStyle: "bold",
           bodyText: "Please provide a hunter name. Usage: /sl register <name>",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(errorMessage, threadID, messageID);
         return;
@@ -1034,7 +1034,7 @@ if (action === "shadowtrain") {
           headerStyle: "bold",
           bodyText: `The name "${name}" is already taken. Please choose a different name.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(duplicateName, threadID, messageID);
         return;
@@ -1046,7 +1046,7 @@ if (action === "shadowtrain") {
           headerStyle: "bold",
           bodyText: `You are already registered as ${userData.name}. Use /sl status to check your stats.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(alreadyRegistered, threadID, messageID);
         return;
@@ -1072,7 +1072,7 @@ if (action === "shadowtrain") {
         headerStyle: "bold",
         bodyText: `${name} registered as a hunter! Default rank: E. Use /sl status to see your stats.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(registerMessage, threadID, messageID);
       return;
@@ -1085,7 +1085,7 @@ if (action === "shadowtrain") {
         headerStyle: "bold",
         bodyText: "You need to register first. Usage: /sl register <name>",
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(notRegistered, threadID, messageID);
       return;
@@ -1100,7 +1100,7 @@ if (action === "shadowtrain") {
         headerStyle: "bold",
         bodyText: `Name: ${userData.name}\nLevel: ${Math.max(1, Number(userData.level) || 1)}\nEXP: ${Math.max(0, Number(userData.exp) || 0)}\nRank: ${userData.rank || "E"}\nRole: ${userData.role || "None"}\nStats: Strength ${Math.max(0, Number(stats.strength) || 0)}, Agility ${Math.max(0, Number(stats.agility) || 0)}, Mana ${Math.max(0, Number(stats.mana) || 0)}\nEquipped Sword: ${equippedSword[0].replace("_", " ")} (Level ${Math.max(1, Number(equippedSword[1]) || 1)})\nShadows: ${userData.shadows.length > 0 ? userData.shadows.map(s => `${s.name} (${s.nickname})`).join(", ") : "None"}\nGuild: ${userData.guild || "None"}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(statusMessage, threadID, messageID);
       return;
@@ -1118,7 +1118,7 @@ if (action === "use") {
           headerStyle: "bold",
           bodyText: `Invalid potion, insufficient quantity, or not enough potions. You have ${userData.inventory.potions[potion] || 0} ${potion?.replace("_", " ") || "potion"}. Check with /sl status.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidItem, threadID, messageID);
         return;
@@ -1153,7 +1153,7 @@ if (action === "use") {
         headerStyle: "bold",
         bodyText: effectMessage,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(useMessage, threadID, messageID);
       return;
@@ -1204,7 +1204,7 @@ if (action === "shop") {
           return `- ${key.replace("_", " ")}: ${displayText} (Cost: ${costStr}${details.limit ? `, Limit: ${details.limit}` : ""})`;
         }).join("\n") + "\nUse /sl buy <item> <quantity> to purchase.",
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(shopMessage, threadID, messageID);
       return;
@@ -1254,7 +1254,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: "Invalid item or quantity. Use /sl shop to see available items, then /sl buy <item> <quantity>.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidItem, threadID, messageID);
         return;
@@ -1269,7 +1269,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `You don't have enough EXP (${totalCost} needed) to buy ${quantity} ${key.replace("_", " ")}.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(insufficientMessage, threadID, messageID);
         return;
@@ -1281,7 +1281,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `Limit reached for ${key.replace("_", " ")}. Max: ${itemData.limit}.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(limitMessage, threadID, messageID);
         return;
@@ -1299,7 +1299,7 @@ if (action === "shop") {
         headerStyle: "bold",
         bodyText: `Purchased ${quantity} ${key.replace("_", " ")}! ${itemData.effect || "Added to inventory."} (Cost: ${totalCost} EXP)`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(buyMessage, threadID, messageID);
       return;
@@ -1315,7 +1315,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: "Only X rank hunters can use /sl battle X!",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(restrictedMessage, threadID, messageID);
           return;
@@ -1331,7 +1331,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `X Rank Supremacy! Defeated ${enemy} instantly by ${userData.name}! Gained ${expGain} EXP. New Level: ${userData.level}, Rank: ${userData.rank}. Reply with 'arise ${enemy} <nickname>' to awaken this Shadow Monarch!`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         let sentMessageID;
         await new Promise((resolve) => {
@@ -1361,7 +1361,7 @@ if (action === "shop") {
                 headerStyle: "bold",
                 bodyText: `Awakened Supreme Monarch as ${nickname}! Gain +1000 Strength, +1000 Agility, +2000 Mana.`,
                 bodyStyle: "bold",
-                footerText: "Developed by: **Aljur pogoy**",
+                footerText: "",
               }),
               threadID,
               event.messageID
@@ -1403,7 +1403,7 @@ if (action === "shop") {
               headerStyle: "bold",
               bodyText: `God Mode Activated! All enemies defeated instantly by ${userData.name}! Gained ${expGain} EXP. New Level: ${userData.level}, Rank: ${userData.rank}.`,
               bodyStyle: "bold",
-              footerText: "Developed by: **Aljur pogoy**",
+              footerText: "",
             });
             await saveHunterData(db, senderID.toString(), userData);
             await api.sendMessage(godModeMessage, threadID, messageID);
@@ -1415,7 +1415,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: `Victory! You defeated ${enemy} with strength ${userStrength} vs ${enemyStrength}! Gained ${expGain} EXP. New Level: ${userData.level}, Rank: ${userData.rank}.`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
 
           if (userData.rank === "S" && isMonarch) {
@@ -1425,7 +1425,7 @@ if (action === "shop") {
               headerStyle: "bold",
               bodyText: `Victory! You defeated ${enemy} with strength ${userStrength} vs ${enemyStrength}! Gained ${expGain} EXP. New Level: ${userData.level}, Rank: ${userData.rank}. Reply with 'arise ${enemy} <nickname>' to awaken this Shadow Monarch!`,
               bodyStyle: "bold",
-              footerText: "Developed by: **Aljur pogoy**",
+              footerText: "",
             });
             let sentMessageID;
             await new Promise((resolve) => {
@@ -1466,7 +1466,7 @@ if (action === "shop") {
                       headerStyle: "bold",
                       bodyText: `Awakened ${normalizedEnemy} as ${nickname}! Gain ${boosts.strength} Strength, ${boosts.agility} Agility, ${boosts.mana} Mana.`,
                       bodyStyle: "bold",
-                      footerText: "Developed by: **Aljur pogoy**",
+                      footerText: "",
                     }),
                     threadID,
                     event.messageID
@@ -1486,7 +1486,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: `Defeated by ${enemy} (strength ${enemyStrength} vs ${userStrength}). Gained ${expGain} EXP. New Level: ${userData.level}, Rank: ${userData.rank}. Train harder!`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await saveHunterData(db, senderID.toString(), userData);
           await api.sendMessage(battleMessage, threadID, messageID);
@@ -1500,7 +1500,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `X Rank Dominance! All enemies defeated instantly! Gained ${expGain} EXP. New Level: ${userData.level}, Rank: ${userData.rank}.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await saveHunterData(db, senderID.toString(), userData);
         await api.sendMessage(battleMessage, threadID, messageID);
@@ -1517,7 +1517,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: "No enemies encountered this time. Gained 100 EXP, 100 Agility, and 100 Mana! New Level: " + userData.level,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await saveHunterData(db, senderID.toString(), userData);
         await api.sendMessage(noEncounterMessage, threadID, messageID);
@@ -1535,7 +1535,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `Last Tier: ${userData.rank || "E"}\nCooldown: ${remaining} mins\nMaterials: ${Object.entries(userData.inventory.materials || {}).map(([k, v]) => `${k} x${Math.max(0, Number(v) || 0)}`).join(", ") || "None"}`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(statusMessage, threadID, messageID);
         return;
@@ -1549,7 +1549,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: "Invalid tier. Use /sl dungeon <tier> (D, C, B, A, S).",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidTier, threadID, messageID);
         return;
@@ -1562,7 +1562,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `Cooldown active. Wait ${Math.ceil(remaining / 60)} minutes.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(cooldownMessage, threadID, messageID);
         return;
@@ -1590,7 +1590,7 @@ if (action === "shop") {
         headerStyle: "bold",
         bodyText: `Cleared ${tier}-tier dungeon! Gained ${expGain} EXP and ${materialList}. New Level: ${userData.level}, Rank: ${userData.rank}.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(dungeonMessage, threadID, messageID);
       return;
@@ -1606,7 +1606,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: "Invalid stat. Use /sl train <strength/agility/mana>.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidStat, threadID, messageID);
         return;
@@ -1624,7 +1624,7 @@ if (action === "shop") {
         headerStyle: "bold",
         bodyText: `Trained ${stat}! +10 ${stat}, +50 EXP. New ${stat}: ${stats[stat]}. New Level: ${userData.level}, Rank: ${userData.rank}.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(trainMessage, threadID, messageID);
       return;
@@ -1650,7 +1650,7 @@ if (action === "shop") {
         headerStyle: "bold",
         bodyText: `Available Quests:\n${questList}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(questMessage, threadID, messageID);
       return;
@@ -1670,7 +1670,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: `Already in ${userData.guild}. Leave to create a new one.`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(alreadyInGuild, threadID, messageID);
           return;
@@ -1682,7 +1682,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: `Guild ${guildName} already exists. Join it instead!`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(guildExists, threadID, messageID);
           return;
@@ -1698,7 +1698,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `Created Guild: ${guildName}. +50 Group Strength.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(createMessage, threadID, messageID);
         return;
@@ -1713,7 +1713,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: "Please specify a guild name. Usage: /sl guild join <guild name>",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noGuildName, threadID, messageID);
           return;
@@ -1725,7 +1725,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: `Already in ${userData.guild}. Leave to join another.`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(alreadyInGuild, threadID, messageID);
           return;
@@ -1738,7 +1738,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: `Guild ${guildName} does not exist.`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(guildNotFound, threadID, messageID);
           return;
@@ -1755,7 +1755,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `Joined ${guildName}! Added ${Math.max(0, Number(stats.strength) || 0)} to guild strength.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(joinMessage, threadID, messageID);
         return;
@@ -1769,7 +1769,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: "You are not in a guild to leave!",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noGuild, threadID, messageID);
           return;
@@ -1784,7 +1784,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: "Your guild no longer exists. You have been removed.",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noGuildFound, threadID, messageID);
           return;
@@ -1802,7 +1802,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `You have left ${currentGuild.name}.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(leaveMessage, threadID, messageID);
         return;
@@ -1817,7 +1817,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: "You must be in a guild to fight!",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noGuild, threadID, messageID);
           return;
@@ -1829,7 +1829,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: "Please specify a guild to fight. Usage: /sl guild fight <guild name>",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noTarget, threadID, messageID);
           return;
@@ -1843,7 +1843,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: "Invalid target guild or you can't fight your own guild!",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(invalidTarget, threadID, messageID);
           return;
@@ -1862,7 +1862,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: `Victory! ${myGuild.name} defeated ${targetGuild.name} (${myStrength} vs ${targetStrength})! Gained 1000 EXP. New Level: ${userData.level}, Rank: ${userData.rank}.`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(fightMessage, threadID, messageID);
         } else {
@@ -1872,7 +1872,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: `Defeated! ${myGuild.name} lost to ${targetGuild.name} (${myStrength} vs ${targetStrength}). Train harder!`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(fightMessage, threadID, messageID);
         }
@@ -1887,7 +1887,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: "No guilds have been created yet.",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noGuilds, threadID, messageID);
           return;
@@ -1899,7 +1899,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `Active Guilds:\n${guildList}`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(listMessage, threadID, messageID);
         return;
@@ -1914,7 +1914,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: "You must be in a guild to change its name!",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noGuild, threadID, messageID);
           return;
@@ -1926,7 +1926,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: "Please specify a new guild name. Usage: /sl guild changename <new name>",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(invalidInput, threadID, messageID);
           return;
@@ -1941,7 +1941,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: "Your guild no longer exists. You have been removed.",
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(noGuildFound, threadID, messageID);
           return;
@@ -1953,7 +1953,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: `Guild ${currentGuild.name} has already changed its name once.`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(alreadyChanged, threadID, messageID);
           return;
@@ -1965,7 +1965,7 @@ if (action === "shop") {
             headerStyle: "bold",
             bodyText: `Guild name ${newGuildName} is already taken.`,
             bodyStyle: "bold",
-            footerText: "Developed by: **Aljur pogoy**",
+            footerText: "",
           });
           await api.sendMessage(nameTaken, threadID, messageID);
           return;
@@ -1987,7 +1987,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `Guild name changed from ${currentGuild.name} to ${newGuildName}.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(changeNameMessage, threadID, messageID);
         return;
@@ -1999,7 +1999,7 @@ if (action === "shop") {
         headerStyle: "bold",
         bodyText: "Invalid guild command. Use /sl guild [create <name> | join <guild name> | leave | fight <guild name> | list | changename <new name>].",
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(invalidGuildCommand, threadID, messageID);
       return;
@@ -2014,7 +2014,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `Cooldown active. Wait ${Math.ceil(remaining / 60)} minutes.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(cooldownMessage, threadID, messageID);
         return;
@@ -2030,7 +2030,7 @@ if (action === "shop") {
         headerStyle: "bold",
         bodyText: `Meditated successfully! +50 Mana. New Mana: ${stats.mana}.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(meditateMessage, threadID, messageID);
       return;
@@ -2049,7 +2049,7 @@ if (action === "shop") {
         headerStyle: "bold",
         bodyText: `Current Shadows:\n${shadowList}\n\nLost Shadows:\n${lostShadowList}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(shadowMessage, threadID, messageID);
       return;
@@ -2065,7 +2065,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: "Invalid role. Use /sl setrole <tank/mage/assassin/healer/ranger>.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidRole, threadID, messageID);
         return;
@@ -2079,7 +2079,7 @@ if (action === "shop") {
         headerStyle: "bold",
         bodyText: `Role set to ${role}. Skills applied based on rank ${userData.rank}.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(roleMessage, threadID, messageID);
       return;
@@ -2094,7 +2094,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: "Please provide a new name. Usage: /sl changename <newname>",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidName, threadID, messageID);
         return;
@@ -2106,7 +2106,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: "You can only change your name once!",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(alreadyChanged, threadID, messageID);
         return;
@@ -2120,7 +2120,7 @@ if (action === "shop") {
           headerStyle: "bold",
           bodyText: `The name "${newName}" is already taken. Choose another.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(nameTaken, threadID, messageID);
         return;
@@ -2134,7 +2134,7 @@ if (action === "shop") {
         headerStyle: "bold",
         bodyText: `Name changed to ${newName}.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(changeNameMessage, threadID, messageID);
       return;
@@ -2157,7 +2157,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
       headerStyle: "bold",
       bodyText: "Only VIPs, Developers, or Admins can use this command.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(permissionDenied, threadID, messageID);
     return;
@@ -2181,7 +2181,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
       headerStyle: "bold",
       bodyText: "Invalid input. Usage: /sl customize set <user name> <name> <rank> <level> <role> <stats> <exp> <equipment> <guild_name>",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidInput, threadID, messageID);
     return;
@@ -2195,7 +2195,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
       headerStyle: "bold",
       bodyText: "Database not available. Please try again later.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(dbError, threadID, messageID);
     return;
@@ -2209,7 +2209,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
       headerStyle: "bold",
       bodyText: `User with name "${targetName}" not found.`,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(notFound, threadID, messageID);
     return;
@@ -2223,7 +2223,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
       headerStyle: "bold",
       bodyText: "Invalid rank. Must be one of: E, D, C, B, A, S, X.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidRank, threadID, messageID);
     return;
@@ -2236,7 +2236,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
       headerStyle: "bold",
       bodyText: "Level must be a positive number.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidLevel, threadID, messageID);
     return;
@@ -2250,7 +2250,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
       headerStyle: "bold",
       bodyText: "Invalid role. Must be one of: tank, mage, assassin, healer, ranger.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidRole, threadID, messageID);
     return;
@@ -2263,7 +2263,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
       headerStyle: "bold",
       bodyText: "Stats value must be non-negative.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidStats, threadID, messageID);
     return;
@@ -2276,7 +2276,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
       headerStyle: "bold",
       bodyText: "EXP must be a non-negative number.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidExp, threadID, messageID);
     return;
@@ -2290,7 +2290,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
       headerStyle: "bold",
       bodyText: `The name "${newName}" is already taken. Choose another.`,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(nameTaken, threadID, messageID);
     return;
@@ -2304,7 +2304,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
       headerStyle: "bold",
       bodyText: "Database not available. Please try again later.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(dbError, threadID, messageID);
     return;
@@ -2352,7 +2352,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
     headerStyle: "bold",
     bodyText: `Customized hunter "${targetName}":\nName: ${newName}\nRank: ${newRank}\nLevel: ${newLevel}\nRole: ${newRole}\nStats: Strength ${newStats}, Agility ${newStats}, Mana ${newStats}\nEXP: ${newExp}\nEquipment: ${newEquipment} (1B damage)\nGuild: ${newGuildName} (Level ${guildLevel})`,
     bodyStyle: "bold",
-    footerText: "Developed by: **Aljur pogoy**",
+    footerText: "",
   });
   await api.sendMessage(customizeMessage, threadID, messageID);
   return;
@@ -2370,7 +2370,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
           headerStyle: "bold",
           bodyText: "Invalid gate class. Use /sl gate enter <blue/red/violet/orange>.",
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(invalidClass, threadID, messageID);
         return;
@@ -2383,7 +2383,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
           headerStyle: "bold",
           bodyText: `Cooldown active. Wait ${Math.ceil(remaining / 60)} minutes.`,
           bodyStyle: "bold",
-          footerText: "Developed by: **Aljur pogoy**",
+          footerText: "",
         });
         await api.sendMessage(cooldownMessage, threadID, messageID);
         return;
@@ -2399,7 +2399,7 @@ if (action === "customize" && args[1]?.toLowerCase() === "set") {
         headerStyle: "bold",
         bodyText: `Cleared ${gateClass} gate! Gained 3000 EXP. New Level: ${userData.level}, Rank: ${userData.rank}.`,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur pogoy**",
+        footerText: "",
       });
       await api.sendMessage(gateMessage, threadID, messageID);
       return;
@@ -2416,7 +2416,7 @@ if (disabledUsersCollection) {
       headerStyle: "bold",
       bodyText: "You are disabled from using Solo Leveling commands.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(disabledMessage, threadID, messageID);
     return;
@@ -2437,7 +2437,7 @@ if (action === "disabled") {
       headerStyle: "bold",
       bodyText: "Only VIPs, Developers, or Admins can use this command.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(permissionDenied, threadID, messageID);
     return;
@@ -2451,7 +2451,7 @@ if (action === "disabled") {
       headerStyle: "bold",
       bodyText: "Please provide a user name. Usage: /sl disabled <name>",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidInput, threadID, messageID);
     return;
@@ -2466,7 +2466,7 @@ if (action === "disabled") {
       headerStyle: "bold",
       bodyText: "Database not available. Please try again later.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(dbError, threadID, messageID);
     return;
@@ -2480,7 +2480,7 @@ if (action === "disabled") {
       headerStyle: "bold",
       bodyText: `User with name "${targetName}" not found.`,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(notFound, threadID, messageID);
     return;
@@ -2495,7 +2495,7 @@ if (action === "disabled") {
       headerStyle: "bold",
       bodyText: `User "${targetName}" is already disabled.`,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(alreadyDisabledMessage, threadID, messageID);
     return;
@@ -2517,7 +2517,7 @@ if (action === "disabled") {
     headerStyle: "bold",
     bodyText: `User "${targetName}" has been disabled.`,
     bodyStyle: "bold",
-    footerText: "Developed by: **Aljur pogoy**",
+    footerText: "",
   });
   await api.sendMessage(successMessage, threadID, messageID);
   return;
@@ -2537,7 +2537,7 @@ if (action === "undisabled") {
       headerStyle: "bold",
       bodyText: "Only VIPs, Developers, or Admins can use this command.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(permissionDenied, threadID, messageID);
     return;
@@ -2551,7 +2551,7 @@ if (action === "undisabled") {
       headerStyle: "bold",
       bodyText: "Please provide a user name. Usage: /sl undisabled <name>",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidInput, threadID, messageID);
     return;
@@ -2565,7 +2565,7 @@ if (action === "undisabled") {
       headerStyle: "bold",
       bodyText: "Database not available. Please try again later.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(dbError, threadID, messageID);
     return;
@@ -2579,7 +2579,7 @@ if (action === "undisabled") {
       headerStyle: "bold",
       bodyText: `User "${targetName}" is not disabled.`,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(notDisabled, threadID, messageID);
     return;
@@ -2593,7 +2593,7 @@ if (action === "undisabled") {
       headerStyle: "bold",
       bodyText: "Database not available. Please try again later.",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(dbError, threadID, messageID);
     return;
@@ -2613,7 +2613,7 @@ if (action === "undisabled") {
     headerStyle: "bold",
     bodyText: `User "${targetName}" has been undisabled and can now use Solo Leveling commands.`,
     bodyStyle: "bold",
-    footerText: "Developed by: **Aljur pogoy**",
+    footerText: "",
   });
   await api.sendMessage(successMessage, threadID, messageID);
   return;
@@ -2626,7 +2626,7 @@ if (action === "undisabled") {
       headerStyle: "bold",
       bodyText: "Invalid command. Usage: /sl [register <name> | status | battle | battle X | shop | buy <item> <quantity> | use <potion> <quantity> | dungeon <tier> | train <stat> | quest | guild [create <name> | join <guild name> | leave | fight <guild name> | list | changename <new name>] | leaderboard | meditate | shadowlist | setrole <class> | changename <newname> | gate enter <class> | s2 register | s2 war | s2 status | s2 battle | s2 shop | s2 dungeon <class tier> | s2 guild [create <name> | leave | list | war] | s2 inventory]",
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur pogoy**",
+      footerText: "",
     });
     await api.sendMessage(invalidCommand, threadID, messageID);
   },

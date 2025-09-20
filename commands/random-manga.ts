@@ -25,7 +25,7 @@ const randomMangaCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Title: ${title}\nStatus: ${status}\nYear: ${year}\nTags: ${tags.join(', ')}\n\nDescription:\n${description}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
 
       await api.sendMessage(
@@ -44,7 +44,7 @@ const randomMangaCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: 'Failed to fetch manga data.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         }),
         threadID,
         messageID,

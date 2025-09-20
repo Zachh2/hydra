@@ -18,7 +18,7 @@ module.exports = {
 
       return api.sendMessage(
 
-        `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Database connection not available. Please configure mongoUri in config.json.\n\n> Thank you for using our Cid Kagenou bot`,
+        `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Database connection not available. Please configure mongoUri in config.json.\n\n> Thank you for using our Chatbot`,
 
         threadID,
 
@@ -36,7 +36,7 @@ module.exports = {
 
       return api.sendMessage(
 
-        `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Usage: #save <name> or #save list\nExample: #save Aljur Pogoy\n\n> Thank you for using our Cid Kagenou bot`,
+        `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Usage: #save <name> or #save list\nExample: #save Aljur Pogoy\n\n> Thank you for using our Chatbot`,
 
         threadID,
 
@@ -58,7 +58,7 @@ module.exports = {
 
           return api.sendMessage(
 
-            `════『 𝗦𝗔𝗩𝗘 』════\n\n📋 No names saved yet.\n\n> Thank you for using our Cid Kagenou bot`,
+            `════『 𝗦𝗔𝗩𝗘 』════\n\n📋 No names saved yet.\n\n> Thank you for using our Chatbot`,
 
             threadID,
 
@@ -72,7 +72,7 @@ module.exports = {
 
         return api.sendMessage(
 
-          `════『 𝗦𝗔𝗩𝗘 』════\n\n📋 Saved Names:\n- ${namesList}\n\n> Thank you for using our Cid Kagenou bot`,
+          `════『 𝗦𝗔𝗩𝗘 』════\n\n📋 Saved Names:\n- ${namesList}\n\n> Thank you for using our Chatbot`,
 
           threadID,
 
@@ -84,7 +84,7 @@ module.exports = {
 
         return api.sendMessage(
 
-          `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Error fetching list: ${err.message}\n\n> Thank you for using our Cid Kagenou bot`,
+          `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Error fetching list: ${err.message}\n\n> Thank you for using our Chatbot`,
 
           threadID,
 
@@ -104,7 +104,7 @@ module.exports = {
 
       return api.sendMessage(
 
-        `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Please provide a valid name to save.\nExample: #save Aljur Pogoy\n\n> Thank you for using our Cid Kagenou bot`,
+        `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Please provide a valid name to save.\nExample: #save Aljur Pogoy\n\n> Thank you for using our Chatbot`,
 
         threadID,
 
@@ -124,7 +124,7 @@ module.exports = {
 
           return api.sendMessage(
 
-            `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Name "${name}" is already saved.\n\n> Thank you for using our Cid Kagenou bot`,
+            `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Name "${name}" is already saved.\n\n> Thank you for using our Chatbot`,
 
             threadID,
 
@@ -158,7 +158,7 @@ module.exports = {
 
       return api.sendMessage(
 
-        `════『 𝗦𝗔𝗩𝗘 』════\n\n✅ Saved "${name}" successfully!\n\n> Thank you for using our Cid Kagenou bot`,
+        `════『 𝗦𝗔𝗩𝗘 』════\n\n✅ Saved "${name}" successfully!\n\n> Thank you for using our Chatbot`,
 
         threadID,
 
@@ -170,7 +170,7 @@ module.exports = {
 
       return api.sendMessage(
 
-        `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Error saving name: ${err.message}\n\n> Thank you for using our Cid Kagenou bot`,
+        `════『 𝗦𝗔𝗩𝗘 』════\n\n❌ Error saving name: ${err.message}\n\n> Thank you for using our Chatbot`,
 
         threadID,
 

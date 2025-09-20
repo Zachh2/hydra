@@ -34,7 +34,7 @@ module.exports = {
 
         contentFont: "fancy_italic",
 
-        content: `❌ Database not available. Please ensure MongoDB is connected.\n> Thanks for using Cid Kagenou bot`,
+        content: `❌ Database not available. Please ensure MongoDB is connected.\n> Thanks for using Chatbot`,
 
       })
 
@@ -80,7 +80,7 @@ module.exports = {
 
         contentFont: "fancy_italic",
 
-        content: `ℹ️ Usage: ${prefix}suggest <suggestion> | ${prefix}suggest list | ${prefix}suggest accept <number> | ${prefix}suggest remove\n> Suggest anything to improve the bot!\n> Thanks for using Cid Kagenou bot`,
+        content: `ℹ️ Usage: ${prefix}suggest <suggestion> | ${prefix}suggest list | ${prefix}suggest accept <number> | ${prefix}suggest remove\n> Suggest anything to improve the bot!\n> Thanks for using Chatbot`,
 
       })
 
@@ -106,7 +106,7 @@ module.exports = {
 
         contentFont: "fancy_italic",
 
-        content: `❌ Only admins, moderators, and developers can view the suggestion list.\n> Thanks for using Cid Kagenou bot`,
+        content: `❌ Only admins, moderators, and developers can view the suggestion list.\n> Thanks for using Chatbot`,
 
       })
 
@@ -130,7 +130,7 @@ module.exports = {
 
           contentFont: "fancy_italic",
 
-          content: `ℹ️ No suggestions found.\n> Encourage users to suggest ideas!\n> Thanks for using Cid Kagenou bot`,
+          content: `ℹ️ No suggestions found.\n> Encourage users to suggest ideas!\n> Thanks for using Chatbot`,
 
         })
 
@@ -154,7 +154,7 @@ module.exports = {
 
         contentFont: "fancy_italic",
 
-        content: `📋 Suggestion List:\n${list}\n> Total: ${suggestions.length}\n> Thanks for using Cid Kagenou bot`,
+        content: `📋 Suggestion List:\n${list}\n> Total: ${suggestions.length}\n> Thanks for using Chatbot`,
 
       })
 
@@ -178,7 +178,7 @@ module.exports = {
 
           contentFont: "fancy_italic",
 
-          content: `❌ Please provide a valid suggestion number (e.g., ${config.Prefix?.[0] || "#"}suggest accept 1).\n> Thanks for using Cid Kagenou bot`,
+          content: `❌ Please provide a valid suggestion number (e.g., ${config.Prefix?.[0] || "#"}suggest accept 1).\n> Thanks for using Chatbot`,
 
         })
 
@@ -200,7 +200,7 @@ module.exports = {
 
           contentFont: "fancy_italic",
 
-          content: `❌ Suggestion #${number} does not exist.\n> Check the list with ${config.Prefix?.[0] || "#"}suggest list.\n> Thanks for using Cid Kagenou bot`,
+          content: `❌ Suggestion #${number} does not exist.\n> Check the list with ${config.Prefix?.[0] || "#"}suggest list.\n> Thanks for using Chatbot`,
 
         })
 
@@ -228,7 +228,7 @@ module.exports = {
 
             contentFont: "fancy_italic",
 
-            content: `📢 Suggestion from ${suggestion.name} [${suggestion.uid}] has been accepted by an admin!\n— Suggestion: ${suggestion.suggestion}\n> Thanks for using Cid Kagenou bot`,
+            content: `📢 Suggestion from ${suggestion.name} [${suggestion.uid}] has been accepted by an admin!\n— Suggestion: ${suggestion.suggestion}\n> Thanks for using Chatbot`,
 
           }),
 
@@ -248,7 +248,7 @@ module.exports = {
 
         contentFont: "fancy_italic",
 
-        content: `✅ Suggestion #${number} accepted and notified all threads.\n> Thanks for using Cid Kagenou bot`,
+        content: `✅ Suggestion #${number} accepted and notified all threads.\n> Thanks for using Chatbot`,
 
       })
 
@@ -272,7 +272,7 @@ module.exports = {
 
           contentFont: "fancy_italic",
 
-          content: `❌ You didn't submit any suggestions, please use suggest <suggestion> to submit.\n> Thanks for using Cid Kagenou bot`,
+          content: `❌ You didn't submit any suggestions, please use suggest <suggestion> to submit.\n> Thanks for using Chatbot`,
 
         })
 
@@ -300,7 +300,7 @@ module.exports = {
 
         contentFont: "fancy_italic",
 
-        content: `✅ Your suggestion(s) have been removed.\n> Thanks for using Cid Kagenou bot`,
+        content: `✅ Your suggestion(s) have been removed.\n> Thanks for using Chatbot`,
 
       })
 
@@ -324,7 +324,7 @@ module.exports = {
 
           contentFont: "fancy_italic",
 
-          content: `❌ Please provide a suggestion (e.g., ${config.Prefix?.[0] || "#"}suggest create more commands).\n> Thanks for using Cid Kagenou bot`,
+          content: `❌ Please provide a suggestion (e.g., ${config.Prefix?.[0] || "#"}suggest create more commands).\n> Thanks for using Chatbot`,
 
         })
 
@@ -346,7 +346,7 @@ module.exports = {
 
           contentFont: "fancy_italic",
 
-          content: `❌ You can only submit one suggestion. Use ${config.Prefix?.[0] || "#"}suggest remove to delete your current suggestion.\n> Thanks for using Cid Kagenou bot`,
+          content: `❌ You can only submit one suggestion. Use ${config.Prefix?.[0] || "#"}suggest remove to delete your current suggestion.\n> Thanks for using Chatbot`,
 
         })
 
@@ -382,7 +382,7 @@ module.exports = {
 
         contentFont: "fancy_italic",
 
-        content: `✅ Your suggestion "${suggestion}" has been sent to developers for review. Please wait for acceptance.\n> Thanks for using Cid Kagenou bot`,
+        content: `✅ Your suggestion "${suggestion}" has been sent to developers for review. Please wait for acceptance.\n> Thanks for using Chatbot`,
 
       })
 

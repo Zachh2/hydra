@@ -104,7 +104,7 @@ module.exports = {
 
       errorMessage += `  ┗━━━━━━━┛\n\n`;
 
-      errorMessage += `> Thank you for using our Cid Kagenou bot`;
+      errorMessage += `> Thank you for using our Chatbot`;
 
       api.sendMessage(errorMessage, threadID, messageID);
 

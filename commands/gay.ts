@@ -23,7 +23,7 @@ const gayCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Missing threadID or messageID in event',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -37,7 +37,7 @@ const gayCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: 'No eligible users found in this group.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         });
         return api.sendMessage(errorMessage, threadID, messageID);
       }
@@ -66,7 +66,7 @@ const gayCommand: ShadowBot.Command = {
             headerStyle: 'bold',
             bodyText: `Look, I found a gay: ${realName} 😆`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: **Aljur Pogoy**',
+            footerText: '',
           }),
           attachment: fs.createReadStream(outputPath),
         },
@@ -82,7 +82,7 @@ const gayCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'An error occurred while generating the image.',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }

@@ -23,7 +23,7 @@ const spankCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Missing threadID or messageID in event',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -41,7 +41,7 @@ const spankCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: 'Please reply to a target, mention a user, or provide a UID.',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -70,7 +70,7 @@ const spankCommand: ShadowBot.Command = {
             headerStyle: 'bold',
             bodyText: `${name1} has spanked ${name2}!`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: **Aljur Pogoy**',
+            footerText: '',
           }),
           attachment: fs.createReadStream(outputPath),
         },
@@ -86,7 +86,7 @@ const spankCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Error: ${error.message || 'Unknown error'}`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }

@@ -36,7 +36,7 @@ const shazamLyricsCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: body,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
     if (args.length === 0) {
       return api.sendMessage(

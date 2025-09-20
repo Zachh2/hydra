@@ -15,7 +15,7 @@ const balanceResetCommand = {
         headerText: 'Reset Balance',
         headerSymbol: '💰',
         headerStyle: 'bold',
-        bodyText: 'Only admins can use this command.\n\n> Thank you for using our Cid Kagenou bot',
+        bodyText: 'Only admins can use this command.\n\n> Thank you for using our Chatbot',
         bodyStyle: 'sansSerif',
         footerText: 'Developed by: Aljur Pogoy',
       }), threadID, messageID);
@@ -26,7 +26,7 @@ const balanceResetCommand = {
         headerText: 'Reset Balance',
         headerSymbol: '💰',
         headerStyle: 'bold',
-        bodyText: `Usage: ${prefix}balance-reset <uid>\nExample: ${prefix}balance-reset 1234567890\n\n> Thank you for using our Cid Kagenou bot`,
+        bodyText: `Usage: ${prefix}balance-reset <uid>\nExample: ${prefix}balance-reset 1234567890\n\n> Thank you for using our Chatbot`,
         bodyStyle: 'sansSerif',
         footerText: 'Developed by: Aljur Pogoy',
       }), threadID, messageID);
@@ -46,7 +46,7 @@ const balanceResetCommand = {
         headerText: 'Reset Balance',
         headerSymbol: '💰',
         headerStyle: 'bold',
-        bodyText: `UID ${targetUID} has no balance data to reset.\n\n> Thank you for using our Cid Kagenou bot`,
+        bodyText: `UID ${targetUID} has no balance data to reset.\n\n> Thank you for using our Chatbot`,
         bodyStyle: 'sansSerif',
         footerText: 'Developed by: Aljur Pogoy',
       }), threadID, messageID);
@@ -68,7 +68,7 @@ const balanceResetCommand = {
       headerText: 'Reset Balance',
       headerSymbol: '💰',
       headerStyle: 'bold',
-      bodyText: `Balance reset for UID ${targetUID}.\n\n> Thank you for using our Cid Kagenou bot`,
+      bodyText: `Balance reset for UID ${targetUID}.\n\n> Thank you for using our Chatbot`,
       bodyStyle: 'sansSerif',
       footerText: 'Developed by: Aljur Pogoy',
     }), threadID, messageID);

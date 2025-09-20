@@ -17,7 +17,7 @@ module.exports = {
       headerStyle: "bold",
       bodyText: body,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur Pogoy**"
+      footerText: ""
     });
       const goonerStats = db ? db.db("gooner_stats") : null;
 if (goonerStats) {

@@ -20,7 +20,7 @@ module.exports = {
         headerStyle: "bold",
         bodyText: body,
         bodyStyle: "bold",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
     const tiktokUrlRegex = /(https?:\/\/(www\.)?(tiktok|vm\.tiktok|vt\.tiktok)\.com\/[^\s]+)/i;
     const urlMatch = body && typeof body === 'string' ? body.match(tiktokUrlRegex) : null;

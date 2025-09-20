@@ -47,7 +47,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "🎮",
-            content: `❌ No attempts left (0/6)! Wait ${Math.floor(timeLeft / 60)}m ${timeLeft % 60}s.\n> Thanks for using Cid Kagenou bot`
+            content: `❌ No attempts left (0/6)! Wait ${Math.floor(timeLeft / 60)}m ${timeLeft % 60}s.\n> Thanks for using Chatbot`
           });
           return api.sendMessage(msg, threadID, messageID);
         }
@@ -107,7 +107,7 @@ module.exports = {
               picturepuzzle: "🖼️ Pic Puzzle: #games picturepuzzle <bet> <answer>"
             };
             return details[game] || "";
-          }).join("\n")}\n\nAttempts: ${userData.gameAttempts}/6\nPage ${page} of ${totalPages}\n> Use #games <page> to navigate\n> Thanks for using Cid Kagenou bot`
+          }).join("\n")}\n\nAttempts: ${userData.gameAttempts}/6\nPage ${page} of ${totalPages}\n> Use #games <page> to navigate\n> Thanks for using Chatbot`
         });
         return api.sendMessage(menu, threadID, messageID);
       }
@@ -121,7 +121,7 @@ module.exports = {
           titleFont: "double_struck",
           contentFont: "fancy_italic",
           emojis: "🎮",
-          content: `❌ Invalid game! Check #games.\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+          content: `❌ Invalid game! Check #games.\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
         });
         return api.sendMessage(errMsg, threadID, messageID);
       }
@@ -134,7 +134,7 @@ module.exports = {
           titleFont: "double_struck",
           contentFont: "fancy_italic",
           emojis: "🎮",
-          content: `❌ Enter a valid bet (e.g., #games ${game} 1000).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+          content: `❌ Enter a valid bet (e.g., #games ${game} 1000).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
         });
         return api.sendMessage(errMsg, threadID, messageID);
       }
@@ -146,7 +146,7 @@ module.exports = {
           titleFont: "double_struck",
           contentFont: "fancy_italic",
           emojis: "🎮",
-          content: `💰 Balance too low! You have ${userData.balance} coins.\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+          content: `💰 Balance too low! You have ${userData.balance} coins.\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
         });
         return api.sendMessage(errMsg, threadID, messageID);
       }
@@ -214,7 +214,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "✊",
-            content: `❌ Choose rock, paper, or scissors (e.g., #games rps 1000 rock).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Choose rock, paper, or scissors (e.g., #games rps 1000 rock).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -272,7 +272,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "🪙",
-            content: `❌ Choose heads or tails (e.g., #games coinflip 1000 heads).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Choose heads or tails (e.g., #games coinflip 1000 heads).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -308,7 +308,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "🎡",
-            content: `❌ Choose red, black, or green (e.g., #games roulette 1000 red).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Choose red, black, or green (e.g., #games roulette 1000 red).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -363,7 +363,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "🔢",
-            content: `❌ Guess 1-10 (e.g., #games guessnumber 1000 5).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Guess 1-10 (e.g., #games guessnumber 1000 5).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -399,7 +399,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "🎴",
-            content: `❌ Pick 1-9 (e.g., #games tictactoe 1000 5).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Pick 1-9 (e.g., #games tictactoe 1000 5).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -435,7 +435,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "😶",
-            content: `❌ Guess a 4-letter animal (e.g., #games hangman 1000 lion).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Guess a 4-letter animal (e.g., #games hangman 1000 lion).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -483,7 +483,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "❓",
-            content: `❓ Largest planet? (e.g., #games trivia 1000 jupiter)\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❓ Largest planet? (e.g., #games trivia 1000 jupiter)\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -518,7 +518,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "📈",
-            content: `❌ Choose high or low (e.g., #games highlow 1000 high).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Choose high or low (e.g., #games highlow 1000 high).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -554,7 +554,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "✋",
-            content: `❌ Choose rock, paper, or scissors (e.g., #games rockpaperscissors 1000 rock).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Choose rock, paper, or scissors (e.g., #games rockpaperscissors 1000 rock).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -613,7 +613,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "🎯",
-            content: `❌ Guess 1-100 (e.g., #games numberguess 1000 42).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Guess 1-100 (e.g., #games numberguess 1000 42).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -666,7 +666,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "💣",
-            content: `❌ Pick 1-5 (e.g., #games minesweeper 1000 3).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Pick 1-5 (e.g., #games minesweeper 1000 3).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -702,7 +702,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "🔴",
-            content: `❌ Pick 1-7 (e.g., #games connectfour 1000 4).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Pick 1-7 (e.g., #games connectfour 1000 4).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -738,7 +738,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "🧩",
-            content: `❌ Unscramble 'pleap' (fruit) (e.g., #games wordscramble 1000 apple).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Unscramble 'pleap' (fruit) (e.g., #games wordscramble 1000 apple).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -785,7 +785,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "🔤",
-            content: `❌ Unscramble 'silent' (hear) (e.g., #games anagram 1000 listen).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Unscramble 'silent' (hear) (e.g., #games anagram 1000 listen).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -821,7 +821,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "🎨",
-            content: `❌ Choose red, blue, or green (e.g., #games colorpick 1000 red).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Choose red, blue, or green (e.g., #games colorpick 1000 red).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -857,7 +857,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "✅",
-            content: `❌ Choose true or false (e.g., #games truefalse 1000 true).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Choose true or false (e.g., #games truefalse 1000 true).\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -893,7 +893,7 @@ module.exports = {
             titleFont: "double_struck",
             contentFont: "fancy_italic",
             emojis: "🖼️",
-            content: `❌ Puzzle: 🐶+🏠=? (e.g., #games picturepuzzle 1000 doghouse)\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Cid Kagenou bot`
+            content: `❌ Puzzle: 🐶+🏠=? (e.g., #games picturepuzzle 1000 doghouse)\nAttempts: ${userData.gameAttempts}/6\n> Thanks for using Chatbot`
           });
           await db.db("users").updateOne(
             { userId: senderID },
@@ -924,7 +924,7 @@ module.exports = {
       result += userData.gameAttempts > 0
         ? `\n\nAttempts: ${userData.gameAttempts}/6`
         : `\n\n❌ No attempts left! Wait 5 minutes.`;
-      result += `\n> Thanks for using Cid Kagenou bot`;
+      result += `\n> Thanks for using Chatbot`;
 
       // Save and send
       usersData.set(senderID, userData);
@@ -944,7 +944,7 @@ module.exports = {
         titleFont: "double_struck",
         contentFont: "fancy_italic",
         emojis: "🎮",
-        content: `┏━━━━━━━┓\n┃ Error: ${error.message}\n┗━━━━━━━┛\n> Thanks for using Cid Kagenou bot`
+        content: `┏━━━━━━━┓\n┃ Error: ${error.message}\n┗━━━━━━━┛\n> Thanks for using Chatbot`
       });
       api.sendMessage(errMsg, threadID, messageID);
     }

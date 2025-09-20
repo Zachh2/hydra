@@ -21,7 +21,7 @@ const sadcatCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: 'Please provide text.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         }),
         threadID,
         messageID,
@@ -41,7 +41,7 @@ const sadcatCommand: ShadowBot.Command = {
         headerStyle: 'bold',
         bodyText: `Sad cat image generated with text: "${text}"`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur Pogoy**',
+        footerText: '',
       });
 
       await api.sendMessage(
@@ -60,7 +60,7 @@ const sadcatCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: 'Failed to generate sad cat image.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: **Aljur Pogoy**',
+          footerText: '',
         }),
         threadID,
         messageID,
