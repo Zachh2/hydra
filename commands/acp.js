@@ -14,7 +14,7 @@ module.exports = {
       headerStyle: "bold",
       bodyText: body,
       bodyStyle: "bold",
-      footerText: "Developed by: **Aljur Pogoy**"
+      footerText: ""
     });
     const handleApprove = async (targetUID) => {
       const form = {

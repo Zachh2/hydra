@@ -28,7 +28,7 @@ module.exports = {
 
             errorMessage += `  ┗━━━━━━━┛\n\n`;
 
-            errorMessage += `> Thank you for using KagenoBoT`;
+            errorMessage += `> Thank you for using Chatbot`;
 
             return api.sendMessage(errorMessage, threadID, messageID);
 
@@ -109,7 +109,7 @@ module.exports = {
 
         resultMessage += `📜 Response Data:\n${formattedData}\n\n`;
 
-        resultMessage += `> Thank you for using our Cid Kagenou bot`;
+        resultMessage += `> Thank you for using our Chat bot`;
 
         return api.sendMessage(resultMessage, threadID, messageID);
 
@@ -149,7 +149,7 @@ module.exports = {
 
         imageMessage += `🖼️ Image Attachment Below:\n\n`;
 
-        imageMessage += `> Thank you for using our Cid Kagenou bot`;
+        imageMessage += `> Thank you for using our Chat bot`;
 
         
 
@@ -197,7 +197,7 @@ module.exports = {
 
       errorMessage += `  ┗━━━━━━━┛\n\n`;
 
-      errorMessage += `> Thank you for using our Cid Kagenou bot`;
+      errorMessage += `> Thank you for using our Chat bot`;
 
       api.sendMessage(errorMessage, threadID, messageID);
 

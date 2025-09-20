@@ -82,7 +82,7 @@ module.exports = {
 
       return api.sendMessage(
 
-        "════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n❌ Usage: #apply <name> <age> <gender> | #apply view <name> | #apply list\n\n> Thank you for using our Cid Kagenou bot",
+        "════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n❌ Usage: #apply <name> <age> <gender> | #apply view <name> | #apply list\n\n> Thank you for using our Chatbot",
 
         threadID,
 
@@ -104,7 +104,7 @@ module.exports = {
 
         return api.sendMessage(
 
-          "════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n❌ Please provide name, age, and gender.\nExample: #apply John 25 Male\n\n> Thank you for using our Cid Kagenou bot",
+          "════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n❌ Please provide name, age, and gender.\nExample: #apply John 25 Male\n\n> Thank you for using our Chatbot",
 
           threadID,
 
@@ -160,7 +160,7 @@ module.exports = {
 
         return api.sendMessage(
 
-          `════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n✔️ Application for ${name} added successfully!\nStorage: ${useMongoDB ? "MongoDB" : "JSON"}\n\n> Thank you for using our Cid Kagenou bot`,
+          `════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n✔️ Application for ${name} added successfully!\nStorage: ${useMongoDB ? "MongoDB" : "JSON"}\n\n> Thank you for using our Chatbot`,
 
           threadID,
 
@@ -174,7 +174,7 @@ module.exports = {
 
         return api.sendMessage(
 
-          `════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n  ┏━━━━━━━┓\n  ┃ 『 𝗜𝗡𝗙𝗢 』 An error occurred while adding the application.\n  ┃ Error: ${err.message}\n  ┗━━━━━━━┛\n\n> Thank you for using our Cid Kagenou bot`,
+          `════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n  ┏━━━━━━━┓\n  ┃ 『 𝗜𝗡𝗙𝗢 』 An error occurred while adding the application.\n  ┃ Error: ${err.message}\n  ┗━━━━━━━┛\n\n> Thank you for using our Chatbot`,
 
           threadID,
 
@@ -194,7 +194,7 @@ module.exports = {
 
         return api.sendMessage(
 
-          "════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n❌ Please provide a name to view.\nExample: #apply view John\n\n> Thank you for using our Cid Kagenou bot",
+          "════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n❌ Please provide a name to view.\nExample: #apply view John\n\n> Thank you for using our Chatbot",
 
           threadID,
 
@@ -224,7 +224,7 @@ module.exports = {
 
           return api.sendMessage(
 
-            `════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n📋 No application found for ${name}.\n\n> Thank you for using our Cid Kagenou bot`,
+            `════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n📋 No application found for ${name}.\n\n> Thank you for using our Chatbot`,
 
             threadID,
 
@@ -238,7 +238,7 @@ module.exports = {
 
           `════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n📋 Application Details:\n` +
 
-          `Name: ${application.name}\nAge: ${application.age}\nGender: ${application.gender}\nTimestamp: ${application.timestamp}\n\n> Thank you for using our Cid Kagenou bot`,
+          `Name: ${application.name}\nAge: ${application.age}\nGender: ${application.gender}\nTimestamp: ${application.timestamp}\n\n> Thank you for using our Chatbot`,
 
           threadID,
 
@@ -252,7 +252,7 @@ module.exports = {
 
         return api.sendMessage(
 
-          `════『 �_A𝗣𝗣𝗟𝗬 』════\n\n  ┏━━━━━━━┓\n  ┃ 『 𝗜𝗡𝗙𝗢 』 An error occurred while viewing the application.\n  ┃ Error: ${err.message}\n  ┗━━━━━━━┛\n\n> Thank you for using our Cid Kagenou bot`,
+          `════『 �_A𝗣𝗣𝗟𝗬 』════\n\n  ┏━━━━━━━┓\n  ┃ 『 𝗜𝗡𝗙𝗢 』 An error occurred while viewing the application.\n  ┃ Error: ${err.message}\n  ┗━━━━━━━┛\n\n> Thank you for using our Chatbot`,
 
           threadID,
 
@@ -286,7 +286,7 @@ module.exports = {
 
           return api.sendMessage(
 
-            "════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n📋 No applications found.\n\n> Thank you for using our Cid Kagenou bot",
+            "════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n📋 No applications found.\n\n> Thank you for using our Chatbot",
 
             threadID,
 
@@ -306,7 +306,7 @@ module.exports = {
 
             .join("\n") +
 
-          "\n\n> Thank you for using our Cid Kagenou bot";
+          "\n\n> Thank you for using our Chatbot";
 
         return api.sendMessage(listMessage, threadID, messageID);
 
@@ -316,7 +316,7 @@ module.exports = {
 
         return api.sendMessage(
 
-          `════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n  ┏━━━━━━━┞\n  ┃ 『 𝗜𝗡𝗙𝗢 』 An error occurred while listing applications.\n  ┃ Error: ${err.message}\n  ┗━━━━━━━┛\n\n> Thank you for using our Cid Kagenou bot`,
+          `════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n  ┏━━━━━━━┞\n  ┃ 『 𝗜𝗡𝗙𝗢 』 An error occurred while listing applications.\n  ┃ Error: ${err.message}\n  ┗━━━━━━━┛\n\n> Thank you for using our Chatbot`,
 
           threadID,
 
@@ -330,7 +330,7 @@ module.exports = {
 
     return api.sendMessage(
 
-      "════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n❌ Invalid subcommand. Use: #apply <name> <age> <gender> | #apply view <name> | #apply list\n\n> Thank you for using our Cid Kagenou bot",
+      "════『 𝗔𝗣𝗣𝗟𝗬 』════\n\n❌ Invalid subcommand. Use: #apply <name> <age> <gender> | #apply view <name> | #apply list\n\n> Thank you for using our Chatbot",
 
       threadID,
 

@@ -31,9 +31,9 @@
     "100002500122486"
   ],
   "Prefix": [
-    "/"
+    "-"
   ],
   "DiscordMode": false,
-  "botName": "KagenouBot",
+  "botName": "hydrabot",
   "mongoUri": ""
 }

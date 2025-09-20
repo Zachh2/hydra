@@ -36,7 +36,7 @@ module.exports = {
         headerStyle: "bold",
         bodyText: "🌸 Here’s your random anime photo!",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       })
 
       api.sendMessage(
@@ -57,7 +57,7 @@ module.exports = {
         headerStyle: "bold",
         bodyText: error.message || "An unexpected error occurred. Please try again later.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       })
       api.sendMessage(errorMessage, threadID, null, messageID)
       console.error("Anime Photo Error:", error.message || error)

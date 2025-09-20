@@ -38,7 +38,7 @@ module.exports = {
 
         bodyStyle: "fancy",
 
-        footerText: "Powered by: **Aljur pogoy**",
+        footerText: "",
 
       });
 

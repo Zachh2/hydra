@@ -43,7 +43,7 @@ const affectCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Nahh doesn't affect my baby",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       await api.sendMessage(
         { body: successMessage, attachment: fs.createReadStream(filePath) },
@@ -59,7 +59,7 @@ const affectCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Error: ${error.message}`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: **Aljur Pogoy**",
+        footerText: "",
       });
       api.sendMessage(errorMessage, threadID, messageID);
     }

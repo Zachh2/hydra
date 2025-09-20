@@ -102,7 +102,7 @@ module.exports = {
 
       baMessage += `✨ Here's your Blue Archive image! ✨\n\n`;
 
-      baMessage += `> Thank you for using our Cid Kagenou bot`;
+      baMessage += `> Thank you for using our  Chatbot`;
 
      
 
