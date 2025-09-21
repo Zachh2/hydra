@@ -40,7 +40,7 @@ const singCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Please provide a song name (e.g. `sing Shape of You`).",
         bodyStyle: "bold",
-        footerText: "Developed by: **ArYAN**",
+        footerText: "Developed by: **powered by chatbot(hydra)**",
       });
       await api.sendMessage(errorMessage, threadID, messageID);
       return;
@@ -53,7 +53,7 @@ const singCommand: ShadowBot.Command = {
       if (!searchResults?.videos?.length) throw new Error("No results found.");
 
       const top = searchResults.videos[0];
-      const apiUrl = `https://www-xyz-free.vercel.app/aryan/youtube?id=${top.videoId}&type=${type}&apikey=itzaryan`;
+      const apiUrl = `https://www-xyz-free.vercel.app/powered by chatbot(hydra)/youtube?id=${top.videoId}&type=${type}&apikey=itzpowered by chatbot(hydra)`;
       const downloadRes = await axios.get(apiUrl);
 
       if (!downloadRes.data?.downloadUrl) throw new Error("No downloadUrl received.");
@@ -88,7 +88,7 @@ const singCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `An error occurred: ${err.message || "Unknown error"}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **ArYAN**",
+        footerText: "Developed by: **powered by chatbot(hydra)**",
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }

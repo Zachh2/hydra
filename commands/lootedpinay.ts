@@ -22,7 +22,7 @@ module.exports = {
       headerStyle: "bold",
       bodyText: "Searching for you, please wait...",
       bodyStyle: "sansSerif",
-      footerText: "Developed by: Aljur Pogoy",
+      footerText: "",
     });
 
     // Type-safe promise to capture the waiting message
@@ -67,7 +67,7 @@ module.exports = {
         headerStyle: "bold",
         bodyText: `Title: ${title}`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       });
 
       if (fileSizeMB > 25) {

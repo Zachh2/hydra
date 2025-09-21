@@ -73,7 +73,7 @@ module.exports = {
           headerStyle: "bold",
           bodyText: content,
           bodyStyle: "sansSerif",
-          footerText: "Developed by: Aljur Pogoy",
+          footerText: "",
         });
 
         api.editMessage(finalMessage, sentMessageID, threadID);
@@ -86,7 +86,7 @@ module.exports = {
         headerStyle: "doubleStruck",
         bodyText: `Error: ${error.message}`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       });
       api.sendMessage(errMsg, threadID, messageID);
     }

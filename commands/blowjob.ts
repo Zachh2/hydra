@@ -37,7 +37,7 @@ const blowjobCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Here’s your requested image (NSFW).",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       })
 
       await api.sendMessage(

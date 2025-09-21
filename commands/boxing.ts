@@ -32,7 +32,7 @@ module.exports = {
       headerStyle: "bold",
       bodyText: body,
       bodyStyle: "sansSerif",
-      footerText: "Developed by: Aljur Pogoy",
+      footerText: "",
     });
 
     const trainingSuccessMessage = styledMessage("Boxing", `✅ Trained successfully!\nStrength: ${user.strength}\nStamina: ${user.stamina}`, "🥊");

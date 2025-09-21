@@ -128,7 +128,7 @@ module.exports = {
         headerStyle: "bold",
         bodyText: "🎨 Your custom Facebook cover is ready!",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       });
 
       api.sendMessage(
@@ -153,7 +153,7 @@ module.exports = {
         bodyText:
           error.message || "An unexpected error occurred. Please try again later.",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       });
       api.sendMessage(errorMessage, threadID, null, messageID);
       console.error("FBCover Error:", error.message || error);

@@ -22,7 +22,7 @@ module.exports = {
           headerStyle: 'bold',
           bodyText: `❌ Insufficient balance! You need ${bet} coins to play. Current: ${user.balance} coins`,
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         return api.sendMessage(errorMessage, threadID, messageID);
       }
@@ -45,7 +45,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: `🎯 Accuracy: ${Math.round(accuracy * 100)}%\n${earnings > 0 ? `🎉 You earned ${earnings} coins!` : '😔 Missed the target.'}\nBalance: ${user.balance} coins`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       api.sendMessage(message, threadID, messageID);
     } catch (error) {
@@ -55,7 +55,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: '❌ An error occurred while playing archery.',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       api.sendMessage(errorMessage, threadID, messageID);
     }

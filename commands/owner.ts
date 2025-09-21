@@ -69,7 +69,7 @@ module.exports = {
       headerStyle: 'bold',
       bodyText: 'Here is the Owner Information:',
       bodyStyle: 'sansSerif',
-      footerText: 'Developed by: Aljur Pogoy',
+      footerText: '',
     });
 
     api.sendMessage(

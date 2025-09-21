@@ -48,7 +48,7 @@ const autoKickCommand = {
           headerStyle: 'bold',
           bodyText: `User ${senderID} was removed after 3 warnings for using blacklisted word: ${matchedWord}`,
           bodyStyle: 'bold',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         await api.sendMessage(styledMessage, threadID);
         global.globalData.delete(attemptsKey);
@@ -73,7 +73,7 @@ const autoKickCommand = {
           headerStyle: 'bold',
           bodyText: `Please avoid using blacklisted word: ${matchedWord}. Warning ${attempts}/3.`,
           bodyStyle: 'bold',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         await api.sendMessage(styledMessage, threadID);
       }
@@ -86,7 +86,7 @@ const autoKickCommand = {
         headerStyle: 'bold',
         bodyText: `Failed to process blacklist warning: ${error.message}`,
         bodyStyle: 'bold',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       await api.sendMessage(styledMessage, threadID);
     }
@@ -100,7 +100,7 @@ const autoKickCommand = {
         headerStyle: 'bold',
         bodyText: 'Usage: /setblacklist <word1> <word2> ... or /setblacklist remove <word>',
         bodyStyle: 'bold',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       return api.sendMessage(styledMessage, threadID, messageID);
     }
@@ -117,7 +117,7 @@ const autoKickCommand = {
             headerStyle: 'bold',
             bodyText: `Word "${word}" is not in the blacklist.`,
             bodyStyle: 'bold',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           return api.sendMessage(styledMessage, threadID, messageID);
         }
@@ -136,7 +136,7 @@ const autoKickCommand = {
           headerStyle: 'bold',
           bodyText: `Removed "${word}" from blacklist.`,
           bodyStyle: 'bold',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         await api.sendMessage(styledMessage, threadID, messageID);
       } catch (error) {
@@ -147,7 +147,7 @@ const autoKickCommand = {
           headerStyle: 'bold',
           bodyText: `Failed to remove word: ${error.message}`,
           bodyStyle: 'bold',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         await api.sendMessage(styledMessage, threadID, messageID);
         await api.setMessageReaction('❌', messageID, () => {});
@@ -161,7 +161,7 @@ const autoKickCommand = {
           headerStyle: 'bold',
           bodyText: 'Please provide words to blacklist (e.g., /setblacklist badword1 badword2).',
           bodyStyle: 'bold',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         return api.sendMessage(styledMessage, threadID, messageID);
       }
@@ -181,7 +181,7 @@ const autoKickCommand = {
           headerStyle: 'bold',
           bodyText: `Blacklisted words set: ${words.join(', ')}`,
           bodyStyle: 'bold',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         await api.sendMessage(styledMessage, threadID, messageID);
       } catch (error) {
@@ -192,7 +192,7 @@ const autoKickCommand = {
           headerStyle: 'bold',
           bodyText: `Failed to update blacklist: ${error.message}`,
           bodyStyle: 'bold',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         await api.sendMessage(styledMessage, threadID, messageID);
         await api.setMessageReaction('❌', messageID, () => {});

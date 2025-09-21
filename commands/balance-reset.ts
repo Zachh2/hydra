@@ -17,7 +17,7 @@ const balanceResetCommand = {
         headerStyle: 'bold',
         bodyText: 'Only admins can use this command.\n\n> Thank you for using our Chatbot',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       }), threadID, messageID);
     }
 
@@ -28,7 +28,7 @@ const balanceResetCommand = {
         headerStyle: 'bold',
         bodyText: `Usage: ${prefix}balance-reset <uid>\nExample: ${prefix}balance-reset 1234567890\n\n> Thank you for using our Chatbot`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       }), threadID, messageID);
     }
 
@@ -48,7 +48,7 @@ const balanceResetCommand = {
         headerStyle: 'bold',
         bodyText: `UID ${targetUID} has no balance data to reset.\n\n> Thank you for using our Chatbot`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       }), threadID, messageID);
     }
 
@@ -70,7 +70,7 @@ const balanceResetCommand = {
       headerStyle: 'bold',
       bodyText: `Balance reset for UID ${targetUID}.\n\n> Thank you for using our Chatbot`,
       bodyStyle: 'sansSerif',
-      footerText: 'Developed by: Aljur Pogoy',
+      footerText: '',
     }), threadID, messageID);
   },
 };

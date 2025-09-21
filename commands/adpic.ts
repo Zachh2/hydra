@@ -43,7 +43,7 @@ const adpicCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Ads 🫡",
         bodyStyle: "sansSerif",
-        footerText: "",
+        footerText: "a",
       });
       await api.sendMessage(
         { body: successMessage, attachment: fs.createReadStream(filePath) },
@@ -59,7 +59,7 @@ const adpicCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Error: ${error.message}`,
         bodyStyle: "sansSerif",
-        footerText: "",
+        footerText: "a",
       });
       api.sendMessage(errorMessage, threadID, messageID);
     }

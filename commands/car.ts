@@ -62,7 +62,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: '❌ You already own a car! Sell it first.',
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -72,7 +72,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: '❌ Please specify a car model to buy! Use /car list to see options.',
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -84,7 +84,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: `❌ Car model "${model}" not found! Use /car list to see available cars.`,
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -95,7 +95,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: `❌ Insufficient balance! You need ${selectedCar.price} coins to buy a ${selectedCar.model}. Current: ${user.balance} coins`,
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -109,7 +109,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: `✅ Bought a ${user.car.model} for ${selectedCar.price} coins!\nCondition: ${user.carCondition}%\nBalance: ${user.balance} coins`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           api.sendMessage(buyMessage, threadID, messageID);
           break;
@@ -121,7 +121,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: '❌ You don’t own a car to sell!',
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -136,7 +136,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: `✅ Sold your ${soldModel} for ${sellValue} coins!\nBalance: ${user.balance} coins`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           api.sendMessage(sellMessage, threadID, messageID);
           break;
@@ -148,7 +148,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: '❌ You don’t own a car to wash!',
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -159,7 +159,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: `❌ Insufficient balance! Washing costs ${washCost} coins. Current: ${user.balance} coins`,
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -171,7 +171,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: `✅ Washed your ${user.car.model}! Condition increased to ${user.carCondition}%\nBalance: ${user.balance} coins`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           api.sendMessage(washMessage, threadID, messageID);
           break;
@@ -183,7 +183,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: '❌ You don’t own a car to race!',
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -194,7 +194,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: `❌ Insufficient balance! Racing costs ${raceCost} coins. Current: ${user.balance} coins`,
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -212,7 +212,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: `🏎️ Raced your ${user.car.model}!\n${earnings > 0 ? `🎉 Won ${earnings} coins!` : '😔 Lost the race.'}\nCondition: ${user.carCondition}%\nBalance: ${user.balance} coins`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           api.sendMessage(raceMessage, threadID, messageID);
           break;
@@ -224,7 +224,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: '❌ You don’t own a car to duel!',
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -235,7 +235,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: `❌ Insufficient balance! Dueling costs ${duelCost} coins. Current: ${user.balance} coins`,
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -253,7 +253,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: `💥 Duled with your ${user.car.model}!\n${duelEarnings > 0 ? `🎉 Won ${duelEarnings} coins!` : '😔 Lost the duel.'}\nCondition: ${user.carCondition}%\nBalance: ${user.balance} coins`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           api.sendMessage(duelMessage, threadID, messageID);
           break;
@@ -268,7 +268,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: carList,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           api.sendMessage(listMessage, threadID, messageID);
           break;
@@ -279,7 +279,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '📋 Available subcommands:\n- /car buy <model>: Buy a car (e.g., /car buy Mazda MX-5 Miata)\n- /car sell: Sell your car\n- /car wash: Wash your car (20 coins, +20% condition)\n- /car race: Race for coins (30 coins entry)\n- /car duel: Duel another car (50 coins entry)\n- /car list: Show available cars',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           api.sendMessage(helpMessage, threadID, messageID);
       }
@@ -290,7 +290,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: '❌ An error occurred while managing your car.',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       api.sendMessage(errorMessage, threadID, messageID);
     }

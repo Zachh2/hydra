@@ -22,7 +22,7 @@ const ssCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Please provide a URL. Usage: /ss <url>",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       })
       return api.sendMessage(usageMessage, threadID, messageID)
     }
@@ -41,7 +41,7 @@ const ssCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "Failed to generate screenshot. Check the URL or try again.",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: Aljur Pogoy",
+          footerText: "",
         })
         return api.sendMessage(errorMessage, threadID, messageID)
       }
@@ -66,7 +66,7 @@ const ssCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "success",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       })
 
       await api.sendMessage(
@@ -87,7 +87,7 @@ const ssCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Error generating screenshot: ${error.message}`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       })
       api.sendMessage(errorMessage, threadID, messageID)
     }

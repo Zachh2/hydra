@@ -31,7 +31,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: '📦 Give - /gift give <UID> <amount>\n✅ Accept - /gift accept\n❌ Decline - /gift decline\n📋 List - /gift list\n\n> Share coins with friends!',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       }), threadID, messageID);
     }
 
@@ -44,7 +44,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '❌ Please provide a valid UID and amount!\nUsage: /gift give <UID> <amount>\nExample: /gift give 123456789 1000',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           }), threadID, messageID);
         }
         if (targetUID === senderID) {
@@ -54,7 +54,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '❌ You cannot gift yourself!',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           }), threadID, messageID);
         }
         if (user.balance < amount) {
@@ -64,7 +64,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '❌ Insufficient balance!\nYour Balance: ' + user.balance.toLocaleString() + ' coins\nRequired: ' + amount.toLocaleString() + ' coins',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           }), threadID, messageID);
         }
 
@@ -83,7 +83,7 @@ module.exports = {
           headerStyle: 'bold',
           bodyText: '✅ Gift of ' + amount.toLocaleString() + ' coins sent to UID ' + targetUID + '!\nAwait their acceptance.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         }), threadID, messageID);
 
       case "list":
@@ -94,7 +94,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '❌ No gifts to display!',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           }), threadID, messageID);
         }
 
@@ -112,7 +112,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: listMessage,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           }), threadID, (err: any, info: any) => {
             sentMessageID = info?.messageID;
             resolve(info);
@@ -134,7 +134,7 @@ module.exports = {
                 headerStyle: 'bold',
                 bodyText: '❌ Invalid format! Reply with Gift accept <number> or Gift decline <number>\nExample: Gift accept 2',
                 bodyStyle: 'sansSerif',
-                footerText: 'Developed by: Aljur Pogoy',
+                footerText: '',
               }), threadID, replyMessageID);
               return;
             }
@@ -148,7 +148,7 @@ module.exports = {
                 headerStyle: 'bold',
                 bodyText: '❌ Invalid gift selection or already processed!',
                 bodyStyle: 'sansSerif',
-                footerText: 'Developed by: Aljur Pogoy',
+                footerText: '',
               }), threadID, replyMessageID);
               return;
             }
@@ -170,7 +170,7 @@ module.exports = {
                   headerStyle: 'bold',
                   bodyText: '✅ Accepted Gift by: ' + senderName + '\nSuccess! You received ' + gift.amount.toLocaleString() + ' coins.\nYour Balance: ' + user.balance.toLocaleString() + ' coins',
                   bodyStyle: 'sansSerif',
-                  footerText: 'Developed by: Aljur Pogoy',
+                  footerText: '',
                 }), threadID, replyMessageID);
               } else {
                 user.gifts[giftIndex].accepted = true;
@@ -181,7 +181,7 @@ module.exports = {
                   headerStyle: 'bold',
                   bodyText: '❌ Declined ' + gift.amount.toLocaleString() + ' coins from ' + senderName + '.',
                   bodyStyle: 'sansSerif',
-                  footerText: 'Developed by: Aljur Pogoy',
+                  footerText: '',
                 }), threadID, replyMessageID);
               }
             } catch (error) {
@@ -191,7 +191,7 @@ module.exports = {
                 headerStyle: 'bold',
                 bodyText: '❌ Failed to fetch sender info!',
                 bodyStyle: 'sansSerif',
-                footerText: 'Developed by: Aljur Pogoy',
+                footerText: '',
               }), threadID, replyMessageID);
             }
             global.Kagenou.replyListeners.delete(sentMessageID);
@@ -207,7 +207,7 @@ module.exports = {
           headerStyle: 'bold',
           bodyText: '❌ Use Gift accept <number> or Gift decline <number> by replying to the gift list!',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         }), threadID, messageID);
 
       default:
@@ -217,7 +217,7 @@ module.exports = {
           headerStyle: 'bold',
           bodyText: '❌ Invalid subcommand! Use: give, accept, decline, or list',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         }), threadID, messageID);
     }
   },

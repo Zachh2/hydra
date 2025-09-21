@@ -31,7 +31,7 @@ module.exports = {
           headerStyle: 'bold',
           bodyText: '❌ No users with wealth found.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         return api.sendMessage(noDataMessage, threadID, messageID);
       }
@@ -66,7 +66,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: '❌ An error occurred while fetching the richest players.',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       api.sendMessage(errorMessage, threadID, messageID);
     }

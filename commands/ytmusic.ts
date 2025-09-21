@@ -24,7 +24,7 @@ module.exports = {
       headerStyle: "bold",
       bodyText: "Searching for you, please wait...",
       bodyStyle: "sansSerif",
-      footerText: "Developed by: Aljur Pogoy",
+      footerText: "",
     });
 
     const waitMsg = await new Promise<{ messageID: string }>((resolve) => {
@@ -39,7 +39,7 @@ module.exports = {
           headerStyle: "bold",
           bodyText: "❗ Please provide the title of the song.",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: Aljur Pogoy",
+          footerText: "",
         }),
         threadID,
         () => api.unsendMessage(waitMsg.messageID),
@@ -62,7 +62,7 @@ module.exports = {
             headerStyle: "bold",
             bodyText: "❌ No song found.",
             bodyStyle: "sansSerif",
-            footerText: "Developed by: Aljur Pogoy",
+            footerText: "",
           }),
           threadID,
           () => api.unsendMessage(waitMsg.messageID),
@@ -87,7 +87,7 @@ module.exports = {
             headerStyle: "bold",
             bodyText: "❌ Failed to fetch MP3 download link.",
             bodyStyle: "sansSerif",
-            footerText: "Developed by: Aljur Pogoy",
+            footerText: "",
           }),
           threadID,
           () => api.unsendMessage(waitMsg.messageID),
@@ -120,7 +120,7 @@ module.exports = {
         headerStyle: "bold",
         bodyText: `🎧 ${title}\nDuration: ${duration} | Quality: ${quality}`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       });
 
       api.sendMessage(
@@ -143,7 +143,7 @@ module.exports = {
           headerStyle: "bold",
           bodyText: "❌ An error occurred while processing your request.",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: Aljur Pogoy",
+          footerText: "",
         }),
         threadID,
         () => api.unsendMessage(waitMsg.messageID),

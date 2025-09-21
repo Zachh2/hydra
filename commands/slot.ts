@@ -118,7 +118,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: `${bodyText}\nSpin: [ ${slot1} | ${slot2} | ${slot3} ]\nBalance: ${user.balance} coins`,
         bodyStyle: 'sansSerif',
-        footerText: `Developed by: Aljur Pogoy • Games Played: ${user.slotStats.games}`,
+        footerText: ` • Games Played: ${user.slotStats.games}`,
       });
 
       api.sendMessage(message, threadID, messageID);
@@ -129,7 +129,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: '❌ An error occurred while playing the slot machine.',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       api.sendMessage(errorMessage, threadID, messageID);
     }

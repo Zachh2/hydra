@@ -120,7 +120,7 @@ console.log(styler)
 ━━━『 📜 Law // with a bold font 』━━━
 A law // with a fancy font
 ━━━━━━━━━━━━━━━━━━━
-Developed by: Aljur pogoy // with a bold font because it supports **BOLD**.
+ // with a bold font because it supports **BOLD**.
 
 can do ${LINE}
 const AuroraBetaStyler = require("@aurora/styler")

@@ -33,7 +33,7 @@ const wantedCommand: ShadowBot.Command = {
           headerStyle: 'bold',
           bodyText: `Failed to retrieve user info: ${err.message}`,
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         }), threadID, messageID);
       }
 
@@ -57,7 +57,7 @@ const wantedCommand: ShadowBot.Command = {
                 headerStyle: 'bold',
                 bodyText: `${userName} is wanted! Dead or Alive!`,
                 bodyStyle: 'sansSerif',
-                footerText: 'Developed by: Aljur Pogoy',
+                footerText: '',
               }),
               attachment: fs.createReadStream(outputPath),
             }, threadID, () => {
@@ -72,7 +72,7 @@ const wantedCommand: ShadowBot.Command = {
               headerStyle: 'bold',
               bodyText: `Error while saving image: ${err.message}`,
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             }), threadID, messageID);
           });
         })
@@ -83,7 +83,7 @@ const wantedCommand: ShadowBot.Command = {
             headerStyle: 'bold',
             bodyText: `Failed to generate image: ${error.message}`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           }), threadID, messageID);
         });
     });

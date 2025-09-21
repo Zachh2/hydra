@@ -18,7 +18,7 @@ module.exports = {
       headerStyle: "bold",
       bodyText: "Please wait...",
       bodyStyle: "sansSerif",
-      footerText: "Developed by: Aljur Pogoy",
+      footerText: "",
     });
 
     const waitMsg = await new Promise<{ messageID: string }>((resolve) => {
@@ -38,7 +38,7 @@ module.exports = {
           headerStyle: "bold",
           bodyText: "🖼 Please reply to an image to transform it into vampire style.",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: Aljur Pogoy",
+          footerText: "",
         }),
         threadID,
         () => api.unsendMessage(waitMsg.messageID),
@@ -63,7 +63,7 @@ module.exports = {
         headerStyle: "bold",
         bodyText: "🧛 Here's your vampire transformation!",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       });
 
       api.sendMessage(
@@ -86,7 +86,7 @@ module.exports = {
           headerStyle: "bold",
           bodyText: "🚫 Error: Couldn't fetch vampire image. Try again later.",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: Aljur Pogoy",
+          footerText: "",
         }),
         threadID,
         () => api.unsendMessage(waitMsg.messageID),

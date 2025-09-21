@@ -25,7 +25,7 @@ module.exports = {
           headerStyle: 'bold',
           bodyText: `❌ You must wait ${remaining} minutes before working again!`,
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         return api.sendMessage(cooldownMessage, threadID, messageID);
       }
@@ -40,7 +40,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: `✅ You earned ${earnings} coins from work!\nBalance: ${user.balance} coins`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       api.sendMessage(message, threadID, messageID);
     } catch (error) {
@@ -50,7 +50,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: '❌ An error occurred while working.',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       api.sendMessage(errorMessage, threadID, messageID);
     }

@@ -23,7 +23,7 @@ const pickuplineCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: pickupline,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       })
 
       api.sendMessage(styledMessage, threadID, messageID)

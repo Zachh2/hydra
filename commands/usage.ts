@@ -24,7 +24,7 @@ const usageCommand: ShadowBot.Command = {
           headerStyle: "bold",
           bodyText: "⚠️ No usage data yet.",
           bodyStyle: "sansSerif",
-          footerText: "Developed by: Aljur Pogoy",
+          footerText: "",
         });
         return await api.sendMessage(noDataMsg, threadID, messageID);
       }
@@ -102,7 +102,7 @@ const usageCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Error: ${error.message}`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       });
 
       await api.sendMessage(errorMessage, threadID, messageID);

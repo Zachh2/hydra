@@ -18,7 +18,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: '❌ Database is not initialized. Please contact the bot administrator.',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       return api.sendMessage(errorMessage, threadID, messageID);
     }
@@ -36,7 +36,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '✅ No users are currently banned.',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           return api.sendMessage(noBansMessage, threadID, messageID);
         }
@@ -50,7 +50,7 @@ module.exports = {
           headerStyle: 'bold',
           bodyText: `✅ Banned Users:\n${banList}`,
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         return api.sendMessage(listMessage, threadID, messageID);
       } catch (error) {
@@ -60,7 +60,7 @@ module.exports = {
           headerStyle: 'bold',
           bodyText: '❌ Failed to fetch ban list due to a database error.',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         return api.sendMessage(errorMessage, threadID, messageID);
       }
@@ -73,7 +73,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: '❌ Usage: /user <action> <UID> [reason/amount]\nActions: ban, unban, give, ban list\nExample: /user ban 1234567890 Spamming\n/user give 1234567890 100\n/user ban list',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       return api.sendMessage(usageMessage, threadID, messageID);
     }
@@ -89,7 +89,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '❌ Please provide a reason for banning.\nUsage: /user ban <UID> <reason>',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           return api.sendMessage(errorMessage, threadID, messageID);
         }
@@ -107,7 +107,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: `✅ Successfully banned UID ${targetUID}.\nReason: ${reason} 🚫`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           return api.sendMessage(banMessage, threadID, messageID);
         } catch (error) {
@@ -117,7 +117,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '❌ Failed to ban user due to a database error.',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           return api.sendMessage(errorMessage, threadID, messageID);
         }
@@ -132,7 +132,7 @@ module.exports = {
               headerStyle: 'bold',
               bodyText: `❌ UID ${targetUID} is not banned.`,
               bodyStyle: 'sansSerif',
-              footerText: 'Developed by: Aljur Pogoy',
+              footerText: '',
             });
             return api.sendMessage(errorMessage, threadID, messageID);
           }
@@ -144,7 +144,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: `✅ Successfully unbanned UID ${targetUID}. ✅`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           return api.sendMessage(unbanMessage, threadID, messageID);
         } catch (error) {
@@ -154,7 +154,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '❌ Failed to unban user due to a database error.',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           return api.sendMessage(errorMessage, threadID, messageID);
         }
@@ -167,7 +167,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '❌ Please provide a valid amount of coins.\nUsage: /user give <UID> <amount>',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           return api.sendMessage(errorMessage, threadID, messageID);
         }
@@ -179,7 +179,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '❌ Amount must be greater than 0.',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           return api.sendMessage(errorMessage, threadID, messageID);
         }
@@ -200,7 +200,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: `✅ Gave ${amount} coins to UID ${targetUID}. 💰\nNew wallet balance: ${userData.balance} coins.`,
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           return api.sendMessage(giveMessage, threadID, messageID);
         } catch (error) {
@@ -210,7 +210,7 @@ module.exports = {
             headerStyle: 'bold',
             bodyText: '❌ Failed to give coins due to a database error.',
             bodyStyle: 'sansSerif',
-            footerText: 'Developed by: Aljur Pogoy',
+            footerText: '',
           });
           return api.sendMessage(errorMessage, threadID, messageID);
         }
@@ -222,7 +222,7 @@ module.exports = {
           headerStyle: 'bold',
           bodyText: '❌ Invalid action. Available actions: ban, unban, give, ban list\nUsage: /user <action> <UID> [reason/amount]',
           bodyStyle: 'sansSerif',
-          footerText: 'Developed by: Aljur Pogoy',
+          footerText: '',
         });
         return api.sendMessage(errorMessage, threadID, messageID);
       }

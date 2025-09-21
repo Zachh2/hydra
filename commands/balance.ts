@@ -25,7 +25,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: `Wallet: 💸 ${user.balance} coins\nBank: 🏦 ${user.bank} coins`,
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       api.sendMessage(balanceMessage, threadID, messageID);
     } catch (error) {
@@ -36,7 +36,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: 'An error occurred while retrieving your balance.',
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: Aljur Pogoy',
+        footerText: '',
       });
       api.sendMessage(errorMessage, threadID, messageID);
     }

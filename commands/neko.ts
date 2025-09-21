@@ -20,7 +20,7 @@ module.exports = {
       headerStyle: "bold",
       bodyText: "Searching for you, please wait...",
       bodyStyle: "sansSerif",
-      footerText: "Developed by: Aljur Pogoy",
+      footerText: "",
     });
 
     const waitMsg = await new Promise<{ messageID: string }>((resolve) => {
@@ -50,7 +50,7 @@ module.exports = {
         headerStyle: "bold",
         bodyText: "Here’s your neko image!",
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       });
 
       if (fileSizeMB > 25) {

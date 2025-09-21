@@ -41,7 +41,7 @@ const shotiCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `Duration: ${duration}s\nRegion: ${region}`,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       })
 
       await api.sendMessage(

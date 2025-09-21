@@ -35,7 +35,7 @@ module.exports = {
         headerStyle: "bold",
         bodyText: body,
         bodyStyle: "sansSerif",
-        footerText: "Developed by: Aljur Pogoy",
+        footerText: "",
       });
 
     const subcommand = args[0]?.toLowerCase();
