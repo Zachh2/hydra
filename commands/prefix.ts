@@ -14,7 +14,7 @@ const prefixCommand: ShadowBot.Command = {
   run: async ({ api, event, prefix }) => {
     const { threadID, messageID } = event;
 
-    const mp4Path = path.join(__dirname, "cache", "cid12.mp4");
+    const mp4Path = path.join(__dirname, "cache", "zach.gif");
 
     try {
       if (!fs.existsSync(mp4Path)) {
@@ -35,7 +35,7 @@ const prefixCommand: ShadowBot.Command = {
         headerStyle: "italic",
         bodyText: `Global Prefix: ${prefix}`,
         bodyStyle: "sansSerif",
-        footerText: "Develope by **Aljur Pogoy**",
+        footerText: "",
       });
 
       await api.sendMessage(
