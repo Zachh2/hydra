@@ -10,7 +10,7 @@ const spotifyCommand: ShadowBot.Command = {
     usage: 'spotify [song name]',
     aliases: [],
     category: 'music',
-    role: 2,
+    role: 0,
     author: 'Aljur Pogoy',
     nonPrefix: true,
     cooldown: 100,

@@ -184,7 +184,7 @@ Usage: ${command.config?.usage || command.usage || `/${name}`}
       }
     }
 
-    const commandsPerPage = 10;
+    const commandsPerPage = 15;
     const totalPages = Math.ceil(commandList.length / commandsPerPage);
     const page = args.length > 0 && !isNaN(parseInt(args[0])) ? parseInt(args[0]) : 1;
 
@@ -207,19 +207,17 @@ Usage: ${command.config?.usage || command.usage || `/${name}`}
     const endIndex = Math.min(startIndex + commandsPerPage, commandList.length);
     const paginatedCommands = commandList.slice(startIndex, endIndex);
 
-    const bodyText = `
+ const bodyText = ` 
 📌 Commands:
 ${paginatedCommands.length > 0 ? paginatedCommands.join("\n") : "No commands on this page."}
 ${LINE}
-🌟 Event Commands:
-${page === 1 && eventList.length > 0 ? eventList.join("\n") : ""}
-${LINE}
 📖 Page ${page}/${totalPages}
-${totalPages > 1 ? "> 🔄 Next page: /help " + (page + 1) + "\n" : ""}
- ℹ️ Details: ${prefix}help <command>
- 🌟 All Commands: ${prefix}help all
- 🌟 Enjoy Chatbot!
+${totalPages > 1 ? "> 🔄 Next page: -help " + (page + 1) + "\n" : ""}
+ >ℹ️ Details: ${prefix}help <command>
+ >🌟 All Commands: ${prefix}help all
+ >🌟 Enjoy Chatbot!
     `.trim();
+
 
     await new Promise(resolve => {
       api.sendMessage(
