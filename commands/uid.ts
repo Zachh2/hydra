@@ -1,74 +1,89 @@
+const axios = require("axios");
 
-import AuroraBetaStyler from "@aurora/styler";
-import axios from "axios";
+module.exports = {
 
+  name: "uid",
 
-const uidCommand: ShadowBot.Command = {
-  config: {
-    name: "uid",
-    description: "Get uid",
-    role: 0,
-    cooldown: 5,
-  },
-  run: async ({ api, event, args }) => {
-    const { threadID, messageID, senderID, messageReply, mentions } = event;
+  version: "2.2.0",
 
-    try {
-      let uid: string | null = null;
-      let responseText = "";
-      if (!args.length && !messageReply && Object.keys(mentions).length === 0) {
-        uid = senderID;
-        responseText = `${uid}`;
-      }
-      else if (messageReply) {
-        uid = messageReply.senderID;
-        responseText = `Replied user: ${uid}`;
-      }
-      else if (Object.keys(mentions).length > 0) {
-        const mention = Object.keys(mentions)[0];
-        uid = mention;
-        responseText = `${uid}`;
-      }
-      else if (args[0] && args[0].startsWith("https")) {
-        const url = encodeURIComponent(args[0]);
-        const apiUrl = `https://kaiz-apis.gleeze.com/api/fbuid?url=${url}&apikey=117cafc8-ef3b-4632-bc1c-13b38b912081`;
-        const { data } = await axios.get(apiUrl);
+  category: "Utility",
 
-        if (data && data.UID) {
-          uid = data.UID;
-          responseText = `✅ | UID from URL: ${uid}`;
-        } else {
-          responseText = "❌";
+  description: "Get UID from Facebook link, tag, reply or yourself",
+
+  usage: "#uid [link/@tag/reply]",
+
+  author: "Aljur Pogoy",
+
+  async run({ api, event, args }) {
+
+    const { threadID, senderID, messageID, messageReply, mentions } = event;
+
+    const isFacebookLink = (str) => str && str.includes("facebook.com");
+
+    if (args[0] && isFacebookLink(args[0])) {
+
+      const link = args[0];
+
+      try {
+
+        const res = await axios.get(`https://kaiz-apis.gleeze.com/api/fbuid?url=${encodeURIComponent(link)}`);
+
+        const data = res.data;
+
+        if (!data || !data.UID) {
+
+          return api.sendMessage(`❌ Failed to get UID.\nLink: ${link}`, threadID, messageID);
+
         }
-      } else {
-        responseText = "❌";
+
+        const result = `====『 𝗨𝗜𝗗 𝗙𝗥𝗢𝗠 𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 𝗟𝗜𝗡𝗞 』====\n\n• UID: ${data.UID}\n• Link: ${link}\n\n> Powered by CBZ(HYDRA)`;
+
+        return api.sendMessage(result, threadID, messageID);
+
+      } catch (err) {
+
+        console.error("UID API error:", err.message);
+
+        return api.sendMessage("❌ An error occurred while fetching UID data.", threadID, messageID);
+
       }
-     /**
-     * @aurora-styler
-     */
-      const replyMessage = AuroraBetaStyler.styleOutput({
-        headerText: "UID",
-        headerSymbol: "💻",
-        headerStyle: "bold",
-        bodyText: responseText,
-        bodyStyle: "sansSerif",
-        footerText: "",
-      });
 
-      await api.sendMessage(replyMessage, threadID, messageID);
-    } catch (error) {
-      console.error("UID Command Error:", error);
-      const errorMessage = AuroraBetaStyler.styleOutput({
-        headerText: "UID Lookup",
-        headerSymbol: "❌",
-        headerStyle: "bold",
-        bodyText: `${error.message}`,
-        bodyStyle: "sansSerif",
-        footerText: "",
-      });
-      api.sendMessage(errorMessage, threadID, messageID);
     }
-  },
-};
 
-export default uidCommand;
+    // Handle mention, reply, or self
+
+    let targetID, targetName;
+
+    if (Object.keys(mentions).length > 0) {
+
+      targetID = Object.keys(mentions)[0];
+
+      targetName = mentions[targetID];
+
+    } else if (messageReply) {
+
+      targetID = messageReply.senderID;
+
+      targetName = "the replied user";
+
+    } else {
+
+      targetID = senderID;
+
+      targetName = "you";
+
+    }
+
+    return api.sendMessage(
+
+      `====『 𝗨𝗦𝗘𝗥 𝗨𝗜𝗗 』====\n\n• Target: ${targetName}\n• UID: ${targetID}\n\n> Use '#uid <fb link>' to fetch UID from a profile link.`,
+
+      threadID,
+
+      messageID
+
+    );
+
+  },
+
+};
