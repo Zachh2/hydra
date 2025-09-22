@@ -1,7 +1,7 @@
 {
-  "name": "c",
-  "version": "1.0.0",
-  "description": "Bot Developed by Aljur Pogoy, and his girlfriend too",
+  "name": "Botfile",
+  "version": "10.0.0",
+  "description": "Botfile Developed by Aljur Pogoy.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -8,12 +8,14 @@
 require("tsconfig-paths").register();
 require("ts-node").register();
 require("./core/global");
+require("./Telegram/index");
 const { MongoClient } = require("mongodb");
 const fs = require("fs-extra");
 const path = require("path");
 const login = require("fbvibex");
 const { handleAuroraCommand, loadAuroraCommands } = require("./core/aurora");
 const chalk = require("chalk");
+const chokidar = require("chokidar");
 loadAuroraCommands();
 
 /* @GlobalVar */
@@ -136,20 +138,58 @@ global.addXP = function (userId, amount = 10) {
  * @param {string|number} userId
  * @returns {number}
  */
-global.getXP = function (userId) {
-  return global.userXP.get(userId) || 0;
+global.getXP = async (userID) => {
+  if (global.usersData.has(userID)) return global.usersData.get(userID).xp || 0;
+  if (global.db) {
+    const user = await global.db.db("users").findOne({ userId: userID });
+    return user?.data?.xp || 0;
+  }
+  return 0;
 };
 
-/**
- * alculate current XP 
- * Assumes 100 XP per level
- * @param {string|number} userId
- * @returns {number}
- */
-global.getLevel = function (userId) {
-  const xp = global.getXP(userId);
-  return Math.floor(xp / 100);
+global.addXP = async (userID, amount) => {
+  const currentXP = await global.getXP(userID);
+  const newXP = currentXP + amount;
+  const newLevel = Math.floor(newXP / 200);
+  const user = global.usersData.get(userID) || { balance: 0, bank: 0, xp: 0, level: 0 };
+  user.xp = newXP;
+  user.level = newLevel;
+  global.usersData.set(userID, user);
+  global.userXP.set(userID, newXP);
+  if (global.db) {
+    await global.db.db("users").updateOne(
+      { userId: userID },
+      { $set: { userId: userID, data: { ...user, xp: newXP, level: newLevel } } },
+      { upsert: true }
+    );
+    global.log.success(`Added ${amount} XP for ${userID} in MongoDB: ${newXP} XP, Level ${newLevel}`);
+  }
+  return newXP;
 };
+
+global.getLevel = async (userID) => {
+  if (global.usersData.has(userID)) return global.usersData.get(userID).level || 0;
+  if (global.db) {
+    const user = await global.db.db("users").findOne({ userId: userID });
+    return user?.data?.level || 0;
+  }
+  return 0;
+};
+async function initProfanityFilter() {
+  try {
+    const { Filter } = await import("bad-words");
+    global.profanityFilter = new Filter({
+      placeHolder: "*",
+      emptyList: false,
+      regex: /\*|\.|$/gi
+    });
+    global.profanityEnabled = true; /* false if no need, not my decision bruh*/
+    global.log.success("Profanity filter initialized with bad-words.");
+  } catch (error) {
+    global.log.error("Failed to initialize bad-words: " + error.message);
+  }
+}
+initProfanityFilter();
 
 global.log = {
   info: (msg) => console.log(chalk.blue("[INFO]"), msg),
@@ -223,10 +263,32 @@ try {
     mongoUri: configData.mongoUri || null,
     ...configData,
   };
+  if (global.config.DiscordMode) {
+    console.log("[BOOT] DiscordMode ON → starting Discord bot only…");
+    require("./Discord/index");
+    return; 
+  }
+
 } catch (error) {
   console.error("[CONFIG] Error loading config.json:", error);
-  global.config = { admins: [], moderators: [], developers: [], Prefix: ["/"], botName: "Shadow Garden Bot", mongoUri: null };
+  global.config = {
+    admins: [],
+    moderators: [],
+    developers: [],
+    Prefix: ["/"],
+    botName: "Shadow Garden Bot",
+    mongoUri: null
+  };
 }
+chokidar.watch(configFile).on("change", () => {
+  try {
+    global.config = JSON.parse(fs.readFileSync(configFile, "utf8"));
+    global.log.success("Config reloaded successfully!");
+  } catch (error) {
+    global.log.error("Failed to reload config: " + error.message);
+  }
+});
+
 let db = null;
 const uri = global.config.mongoUri || null;
 console.log("[DB] MongoDB URI:", uri);
@@ -281,8 +343,19 @@ const sendMessage = async (api, messageData) => {
       throw new Error("ThreadID must be a number, string, or array and cannot be undefined.");
     }
     if (!message || message.trim() === "") return;
+    let finalMessage = message;
+    if (global.profanityFilter && global.profanityEnabled) {
+      try {
+        finalMessage = global.profanityFilter.clean(message);
+        if (finalMessage !== message) {
+          global.log.warn(`[PROFANITY] Bot output censored in thread ${threadID}: ${message} -> ${finalMessage}`);
+        }
+      } catch (error) {
+        global.log.error(`Profanity filter error in sendMessage: ${error.message}`);
+      }
+    }
     return new Promise((resolve, reject) => {
-      api.sendMessage({ body: message, attachment }, threadID, (err, info) => {
+      api.sendMessage({ body: finalMessage, attachment }, threadID, (err, info) => {
         if (err) {
           console.error("Error sending message:", err);
           return reject(err);
@@ -303,7 +376,24 @@ const sendMessage = async (api, messageData) => {
 const handleMessage = async (api, event) => {
   const { threadID, senderID, body, messageReply, messageID, attachments } = event;
   if (!body && !attachments) return;
-  const message = body ? body.trim() : "";
+  let message = body ? body.trim() : "";
+  if (global.profanityFilter && global.profanityEnabled) {
+    try {
+      const censoredMessage = global.profanityFilter.clean(message);
+      if (censoredMessage !== message) {
+        global.log.warn(`[PROFANITY] User ${senderID} in thread ${threadID}: ${message} -> ${censoredMessage}`);
+        const userRole = getUserRole(senderID);
+        if (userRole < 2) { 
+          return;
+        }
+        event.body = censoredMessage;
+        message = censoredMessage;
+      }
+    } catch (error) {
+      global.log.error(`Profanity filter error: ${error.message}`);
+    }
+  }
+
   const words = message.split(/ +/);
   let prefixes = [global.getPrefix(threadID)]; 
   let prefix = prefixes[0]; 
@@ -410,7 +500,6 @@ const handleMessage = async (api, event) => {
     sendMessage(api, { threadID, message: `Invalid Command!, Use ${global.getPrefix(threadID)}help for available commands.`, messageID });
   }
 };
-
 /**
  * @typedef {Object} UserStats
  * @property {number} messages 

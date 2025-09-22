@@ -1,3 +1,4 @@
+
 import { createCanvas, loadImage } from "canvas";
 import fs from "fs";
 import path from "path";
@@ -19,23 +20,22 @@ const xpCommand: ShadowBot.Command = {
 
     try {
       let user = usersData.get(senderID) || { balance: 0, bank: 0, xp: 0, level: 0 };
-      user.xp = global.getXP(senderID) || user.xp || 0;
-      user.level = global.getLevel(senderID) || user.level || 0;
-      global.userXP.set(senderID, user.xp);
+      user.xp = await global.getXP(senderID);
+      user.level = await global.getLevel(senderID);
       usersData.set(senderID, user);
-
       if (db) {
         const usersCollection = db.db("users");
         await usersCollection.updateOne(
           { userId: senderID },
-          { $set: { userId: senderID, data: user } },
+          { $set: { userId: senderID, data: { ...user, xp: user.xp, level: user.level } } },
           { upsert: true }
         );
-        console.log(`XP updated`);
+        global.log.success(`XP synced for ${senderID} in MongoDB: ${user.xp} XP, Level ${user.level}`);
       } else {
-        console.log("No DB connected");
+        global.log.warn(`No MongoDB connected for ${senderID} XP sync`);
       }
 
+    
       const width = 800;
       const height = 300;
       const canvas = createCanvas(width, height);
@@ -129,17 +129,15 @@ const xpCommand: ShadowBot.Command = {
         } catch {}
       }
     } catch (error: any) {
-      console.error("XP Command Error:", error);
-
+      global.log.error(`XP Command Error for ${senderID}: ${error.message}`);
       const errorMessage = AuroraBetaStyler.styleOutput({
-        headerText: "❌ XP Profile Error",
+        headerText: "XP Profile Error",
         headerSymbol: "⚠️",
         headerStyle: "bold",
         bodyText: `Error: ${error.message}`,
         bodyStyle: "sansSerif",
         footerText: "Try again later.",
       });
-
       api.sendMessage(errorMessage, threadID, messageID);
     }
   },
