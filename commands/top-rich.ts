@@ -55,7 +55,7 @@ module.exports = {
         headerStyle: 'bold',
         bodyText: names.join("\n"),
         bodyStyle: 'sansSerif',
-        footerText: 'Developed by: **Aljur**',
+        footerText: ': **Aljur**',
       });
 
       api.sendMessage(message, threadID, messageID);

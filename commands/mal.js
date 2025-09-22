@@ -118,7 +118,7 @@ module.exports = {
 
         bodyStyle: "bold",
 
-        footerText: "Developed: **Aljur pogoy**",
+        footerText: "",
 
       });
 

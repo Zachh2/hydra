@@ -7,7 +7,7 @@ const helpCommand: ShadowBot.Command = {
   config: {
     name: "help",
     description: "Displays all available commands or detailed info about a specific command",
-    usage: "/help or /help <command> or /help <page> or /help all",
+    usage: "-help or -help <command> or -help <page> or -help all",
     aliases: [],
     category: "Utility"
   },

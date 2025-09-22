@@ -46,7 +46,7 @@ module.exports = {
 
       titleFont: "double_struck",
 
-      content: content + "Aurora System Developed by CBZ",
+      content: content + "Aurora System  CBZ",
 
       contentFont: "bold",
 

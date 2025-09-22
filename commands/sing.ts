@@ -40,7 +40,7 @@ const singCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: "Please provide a song name (e.g. `sing Shape of You`).",
         bodyStyle: "bold",
-        footerText: "Developed by: **powered by chatbot(hydra)**",
+        footerText: ": **powered by chatbot(hydra)**",
       });
       await api.sendMessage(errorMessage, threadID, messageID);
       return;
@@ -88,7 +88,7 @@ const singCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `An error occurred: ${err.message || "Unknown error"}`,
         bodyStyle: "bold",
-        footerText: "Developed by: **powered by chatbot(hydra)**",
+        footerText: ": **powered by chatbot(hydra)**",
       });
       await api.sendMessage(errorMessage, threadID, messageID);
     }
