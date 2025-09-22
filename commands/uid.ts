@@ -52,7 +52,7 @@ const uidCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: responseText,
         bodyStyle: "sansSerif",
-        footerText: "**Developed by:** Aljur Pogoy",
+        footerText: "",
       });
 
       await api.sendMessage(replyMessage, threadID, messageID);
@@ -64,7 +64,7 @@ const uidCommand: ShadowBot.Command = {
         headerStyle: "bold",
         bodyText: `${error.message}`,
         bodyStyle: "sansSerif",
-        footerText: "Powered by Kaiz API",
+        footerText: "",
       });
       api.sendMessage(errorMessage, threadID, messageID);
     }
