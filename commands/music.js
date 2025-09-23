@@ -1,117 +1,81 @@
-const fs = require('fs');
-
-const path = require('path');
-
+const fs = require("fs-extra");
+const path = require("path");
 const axios = require("axios");
+const yts = require("yt-search");
 
 module.exports.config = {
-
-  "name": "music",
-
-  "version": "1.0.0",
-
-  "role": 0,
-
-  "hasPrefix": true,
-
-  "aliases": [
-
-    "song",
-
-    "music",
-
-    "music",
-
-    "music"
-
-  ],
-
-  "description": "Get a Spotify song and send as an mp3 voice attachment",
-
-  "usage": "spotify [song name]",
-
-  "credits": "churchill",
-
-  "cooldown": 0
-
+    name: "music",
+    version: "1.1.0",
+    hasPermssion: 0,
+    description: "Play and download YouTube music",
+    usePrefix: true,
+    hide: false,
+    commandCategory: "Music",
+    usages: "<song name>",
+    cooldowns: 5,
+    credits: "Jonell Magallanes"
 };
 
-module.exports.run = async function({ api, event, args }) {
-
-    const chilli = args.join(' ');
-
-    if (!chilli) {
-
-        return api.sendMessage('Please provide a song, for example: spotify Selos', event.threadID, event.messageID);
-
-    }
-
-    const apiUrl = `https://hiroshi-api.onrender.com/tiktok/spotify?search=${encodeURIComponent(chilli)}`;
-
+module.exports.run = async ({ api, event, args }) => {
     try {
-
-        const response = await axios.get(apiUrl);
-
-        const maanghang = response.data[0];
-
-        if (!maanghang || !maanghang.download) {
-
-            return api.sendMessage('No song found for your search. Please try again with a different query.', event.threadID, event.messageID);
-
+        const query = args.join(" ");
+        if (!query) {
+            return api.sendMessage("❌ Please provide a song name to search.", event.threadID, event.messageID);
         }
 
-        const bundat = maanghang.download;
+        const search = await yts(query);
+        if (!search.videos.length) {
+            return api.sendMessage("❌ No results found.", event.threadID, event.messageID);
+        }
 
-        const fileName = `${maanghang.name}.mp3`;
+        const video = search.videos[0];
+        const url = video.url;
 
-        const filePath = path.join(__dirname, fileName);
+        api.setMessageReaction("⏳", event.messageID, () => {}, true);
 
-        const downloadResponse = await axios({
+        // ✅ FIXED: Correct template literal
+        const apiUrl = `https://ccproject.serv00.net/ytdl2.php?url=${encodeURIComponent(url)}`;
+        const res = await axios.get(apiUrl);
 
-            method: 'GET',
+        if (!res.data || !res.data.download) {
+            throw new Error("Invalid API response (no download link).");
+        }
 
-            url: bundat,
+        const { title, download } = res.data;
 
-            responseType: 'stream',
+        // Ensure cache folder exists
+        const cacheDir = path.join(process.cwd(), "cache");
+        await fs.ensureDir(cacheDir);
 
-        });
-
+        // ✅ FIXED: Proper backticks for filename
+        const filePath = path.join(cacheDir, `${Date.now()}.mp3`);
         const writer = fs.createWriteStream(filePath);
 
-        downloadResponse.data.pipe(writer);
+        const response = await axios.get(download, { responseType: "stream" });
+        response.data.pipe(writer);
 
-        writer.on('finish', async () => {
-
-            
-
-            await api.sendMessage(`🎶 Now playing: ${maanghang.name}\n\n🔗 Spotify Link: ${maanghang.track}`, event.threadID);
-
-            
-
-            api.sendMessage({
-
-                attachment: fs.createReadStream(filePath)
-
-            }, event.threadID, () => {
-
-                fs.unlinkSync(filePath);
-
-            });
-
+        writer.on("finish", () => {
+            // ✅ FIXED: Proper backticks for message body
+            api.sendMessage(
+                {
+                    body:
+                        `🎶 𝗠𝘂𝘀𝗶𝗰 𝗣𝗹𝗮𝘆𝗲𝗿 (YouTube)\n━━━━━━━━━━━━━━━━━━\n` +
+                        `🎵 Title: ${video.title}\n👤 Author: ${video.author.name}\n⏱️ Duration: ${video.timestamp}\n🔗 YouTube: ${video.url}\n⬇️ Download: ${download}`,
+                    attachment: fs.createReadStream(filePath)
+                },
+                event.threadID,
+                () => {
+                    api.setMessageReaction("✅", event.messageID, () => {}, true);
+                    fs.unlinkSync(filePath);
+                }
+            );
         });
 
-        writer.on('error', () => {
-
-            api.sendMessage('There was an error downloading the file. Please try again later.', event.threadID, event.messageID);
-
+        writer.on("error", () => {
+            api.sendMessage("❌ Failed to process the music file.", event.threadID, event.messageID);
         });
 
-    } catch (pogi) {
-
-        console.error('Error fetching song:', pogi);
-
-        api.sendMessage('An error occurred while fetching the song. Please try again later.', event.threadID, event.messageID);
-
+    } catch (err) {
+        api.sendMessage("❌ Error: Unable to fetch music.\n\n" + err.message, event.threadID, event.messageID);
     }
-
 };
